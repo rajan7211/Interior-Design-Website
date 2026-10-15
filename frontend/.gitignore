@@ -1,0 +1,12 @@
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Nested frontend/backend dependencies
+**/node_modules/
+**/dist/
+
+# Coverage reports
+coverage/

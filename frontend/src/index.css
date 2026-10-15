@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-display: "Cinzel", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+
+  --color-ivory: #FBF9F5;
+  --color-ivory-light: #FDFCF9;
+  --color-ivory-dark: #F5EFE6;
+
+  --color-sand: #F2EDE4;
+  --color-sand-light: #F7F4EE;
+  --color-sand-dark: #E4DCD0;
+
+  --color-charcoal: #181716;
+  --color-charcoal-muted: #2A2724;
+  --color-charcoal-light: #3D3934;
+  
+  --color-bronze: #847262;
+  --color-bronze-light: #A39180;
+
+  --color-olive: #5D6853;
+  --color-olive-dark: #4A5442;
+  --color-olive-light: #738067;
+  --color-olive-soft: #EEF1EB;
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background-color: #FBF9F5;
+  color: #181716;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom luxury typography classes */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Editorial tracking and line heights */
+.tracking-luxury {
+  letter-spacing: 0.18em;
+}
+
+.tracking-wide-luxury {
+  letter-spacing: 0.28em;
+}
+
+/* Luxury button and transition utilities */
+.btn-luxury {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-luxury-primary {
+  background-color: #181716;
+  color: #FBF9F5;
+  border: 1px solid #181716;
+}
+
+.btn-luxury-primary:hover {
+  background-color: #2A2724;
+  color: #FFFFFF;
+}
+
+.btn-luxury-outline {
+  background-color: transparent;
+  color: #181716;
+  border: 1px solid #181716;
+}
+
+.btn-luxury-outline:hover {
+  background-color: #181716;
+  color: #FBF9F5;
+}
+
+.btn-luxury-olive {
+  background-color: #5D6853;
+  color: #FBF9F5;
+  border: 1px solid #5D6853;
+}
+
+.btn-luxury-olive:hover {
+  background-color: #4A5442;
+}
+
+/* Subtle image hover zoom */
+.luxury-image-card {
+  overflow: hidden;
+}
+
+.luxury-image-card img {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-image-card:hover img {
+  transform: scale(1.04);
+}
+
+/* Smooth custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FBF9F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4CDBC;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #847262;
+}
