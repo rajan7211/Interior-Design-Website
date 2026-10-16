@@ -5,7 +5,7 @@ import { FadeIn, FadeInStagger, FadeInStaggerItem, AnimatedCounter } from '../ui
 
 export const StatsIntroSection: React.FC = () => {
   return (
-    <section className="w-full bg-[#FFFFFF] py-20 sm:py-28 overflow-hidden text-left">
+    <section className="w-full bg-[#FFFFFF] py-14 sm:py-20 overflow-hidden text-left">
       <div className="max-w-[1680px] mx-auto px-4 sm:px-8 lg:px-12">
         {/* Header with Title and "More About Us ->" Button */}
         <FadeIn direction="up">

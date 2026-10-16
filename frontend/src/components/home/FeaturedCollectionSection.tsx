@@ -6,7 +6,7 @@ import { FadeIn, FadeInStagger, FadeInStaggerItem } from '../ui/Motion';
 
 export const FeaturedCollectionSection: React.FC = () => {
   return (
-    <section className="w-full bg-[#FAF8F5] py-20 sm:py-28 overflow-hidden text-left">
+    <section className="w-full bg-[#FAF8F5] py-14 sm:py-20 overflow-hidden text-left">
       <div className="max-w-[1680px] mx-auto px-4 sm:px-8 lg:px-12">
         {/* Header */}
         <FadeIn direction="up">

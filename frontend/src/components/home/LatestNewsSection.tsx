@@ -5,7 +5,7 @@ import { FadeIn, FadeInStagger, FadeInStaggerItem } from '../ui/Motion';
 
 export const LatestNewsSection: React.FC = () => {
   return (
-    <section className="w-full bg-[#FFFFFF] pt-20 sm:pt-28 pb-12 sm:pb-16 overflow-hidden text-center">
+    <section className="w-full bg-[#FFFFFF] py-14 sm:py-20 overflow-hidden text-center">
       <div className="max-w-[1680px] mx-auto px-4 sm:px-8 lg:px-12">
         {/* Header */}
         <FadeIn direction="up">

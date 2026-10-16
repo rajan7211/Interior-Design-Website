@@ -29,7 +29,7 @@ export const DribbbleTestimonialSection: React.FC = () => {
   const t = testimonials[currentIndex];
 
   return (
-    <section className="w-full bg-[#FAF8F5] py-20 sm:py-28 overflow-hidden text-left">
+    <section className="w-full bg-[#FAF8F5] py-14 sm:py-20 overflow-hidden text-left">
       <div className="max-w-[1680px] mx-auto px-4 sm:px-8 lg:px-12">
         <FadeIn direction="up">
           <div className="bg-white rounded-3xl p-6 sm:p-10 lg:p-12 border border-neutral-100 shadow-xl">

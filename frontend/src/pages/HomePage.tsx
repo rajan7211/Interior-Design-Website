@@ -25,7 +25,7 @@ export const HomePage: React.FC = () => {
       {/* Interactive Product Placement & Hotspots  */}
       <ProductPlacementSection />
 
-      {/* 4. Exclusive Furniture 4-Category Grid  */}
+      {/* Exclusive Furniture 4-Category Grid  */}
       <ExclusiveFurnitureSection />
 
       {/*  Interactive Before / After Reimagine Split Slider  */}

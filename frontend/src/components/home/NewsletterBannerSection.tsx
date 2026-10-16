@@ -15,7 +15,7 @@ export const NewsletterBannerSection: React.FC = () => {
   };
 
   return (
-    <section className="relative w-full min-h-[calc(100vh-400px)] flex flex-col justify-center py-20 sm:py-28 lg:py-32 overflow-hidden bg-neutral-900 text-white text-center">
+    <section className="relative w-full min-h-[calc(100vh-400px)] flex flex-col justify-center py-14 sm:py-20 overflow-hidden bg-neutral-900 text-white text-center">
       {/* Background Boucle Shell Chair Photo (Matching Image 4) */}
       <div className="absolute inset-0 z-0">
         <img

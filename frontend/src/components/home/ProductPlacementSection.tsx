@@ -3,7 +3,7 @@ import { FadeIn } from '../ui/Motion';
 
 export const ProductPlacementSection: React.FC = () => {
   return (
-    <section className="w-full bg-[#FAF8F5] py-16 sm:py-24 overflow-hidden text-left">
+    <section className="w-full bg-[#FAF8F5] py-14 sm:py-20 overflow-hidden text-left">
       <div className="max-w-[1680px] mx-auto px-4 sm:px-8 lg:px-12">
         <FadeIn direction="up">
           {/* Main Visualizer Container */}

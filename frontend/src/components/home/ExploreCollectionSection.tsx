@@ -15,7 +15,7 @@ export const ExploreCollectionSection: React.FC = () => {
   ];
 
   return (
-    <section className="w-full bg-[#FFFFFF] py-20 sm:py-28 overflow-hidden text-left">
+    <section className="w-full bg-[#FFFFFF] py-14 sm:py-20 overflow-hidden text-left">
       <div className="max-w-[1680px] mx-auto px-4 sm:px-8 lg:px-12">
         <FadeIn direction="up">
           <h2 className="font-sans font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#111111] mb-12 sm:mb-16 tracking-tight">

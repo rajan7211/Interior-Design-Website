@@ -26,7 +26,7 @@ export const BeforeAfterSliderSection: React.FC = () => {
   };
 
   return (
-    <section className="w-full bg-[#FFFFFF] pb-20 sm:pb-28 overflow-hidden text-left">
+    <section className="w-full bg-[#FFFFFF] py-14 sm:py-20 overflow-hidden text-left">
       <div className="max-w-[1680px] mx-auto px-4 sm:px-8 lg:px-12">
         <FadeIn direction="up">
           <div
