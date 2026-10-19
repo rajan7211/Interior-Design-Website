@@ -15,18 +15,18 @@ export const NumberedAccordionSection: React.FC = () => {
   return (
     <section className="w-full bg-[#FFFFFF] py-14 sm:py-20 overflow-hidden text-left">
       <div className="max-w-[1680px] mx-auto px-4 sm:px-8 lg:px-12">
-        {/* Section Header */}
+        {/* Section Header - Centered Architectural Layout */}
         <FadeIn direction="up">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-14 gap-6">
-            <div>
-              <span className="text-xs font-sans uppercase font-bold tracking-wider text-neutral-400 block mb-2">
-                Curated Living Spaces
-              </span>
-              <h2 className="font-sans font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#111111] tracking-tight">
-                Discover Your Perfect<br className="hidden sm:inline" /> Furniture
-              </h2>
-            </div>
-            <p className="text-xs sm:text-sm font-sans text-neutral-500 max-w-md leading-relaxed">
+          <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-14 space-y-3">
+            <span className="inline-flex items-center space-x-2 text-xs font-sans uppercase font-bold tracking-widest text-[#E05A2B]">
+              <span>✦</span>
+              <span>Curated Living Spaces</span>
+              <span>✦</span>
+            </span>
+            <h2 className="font-sans font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#111111] tracking-tight">
+              Discover Your Perfect Furniture
+            </h2>
+            <p className="text-xs sm:text-sm font-sans text-neutral-500 max-w-xl mx-auto leading-relaxed">
               Explore architecturally calibrated spaces curated with handcrafted essentials, natural materials, and timeless comfort for every corner of your home.
             </p>
           </div>
@@ -64,12 +64,12 @@ export const NumberedAccordionSection: React.FC = () => {
                   }`}
                 />
 
-                {/* Dark Vignette Overlay */}
+                {/* Refined Vignette Overlay - lighter on inactive to showcase natural room aesthetics */}
                 <div
                   className={`absolute inset-0 transition-all duration-500 ${
                     isOpen
                       ? 'bg-gradient-to-t from-black/90 via-black/35 to-black/20'
-                      : 'bg-black/55 group-hover:bg-black/40'
+                      : 'bg-black/35 group-hover:bg-black/15'
                   }`}
                 />
 
@@ -103,10 +103,15 @@ export const NumberedAccordionSection: React.FC = () => {
                     </motion.div>
                   </div>
                 ) : (
-                  /* Inactive Panel: Sleek Vertical Callout */
-                  <div className="relative z-10 w-full h-full p-6 flex flex-col justify-center items-center text-center">
+                  /* Inactive Panel: Sleek Vertical Callout + Frosted Glass Pill Badge */
+                  <div className="relative z-10 w-full h-full p-6 flex flex-col justify-between items-center text-center">
+                    <div className="w-2 h-2" />
                     {/* Vertical Rotated Title */}
-                    <span className="block -rotate-90 whitespace-nowrap text-white font-sans font-extrabold text-base lg:text-lg tracking-wider uppercase group-hover:text-[#E05A2B] transition-colors">
+                    <span className="block -rotate-90 whitespace-nowrap text-white font-sans font-extrabold text-base lg:text-lg tracking-wider uppercase group-hover:text-[#E05A2B] transition-colors drop-shadow-md">
+                      {item.name}
+                    </span>
+                    {/* Frosted Room Pill Badge */}
+                    <span className="px-3 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-[10px] font-bold tracking-wider uppercase text-white/90 group-hover:bg-[#E05A2B] group-hover:text-white group-hover:border-[#E05A2B] transition-all shadow-md">
                       {item.name}
                     </span>
                   </div>

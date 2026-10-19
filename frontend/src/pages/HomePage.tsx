@@ -22,7 +22,7 @@ export const HomePage: React.FC = () => {
       {/*  Timeless Elegance & $80M+ Stats Section  */}
       <StatsIntroSection />
 
-      {/* Interactive Product Placement & Hotspots  */}
+      {/* Living In Context - Curated Architectural Showcase */}
       <ProductPlacementSection />
 
       {/* Exclusive Furniture 4-Category Grid  */}

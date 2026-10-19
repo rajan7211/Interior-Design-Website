@@ -481,7 +481,7 @@ export const ROOM_CATEGORIES = [
     id: 'rc-2',
     title: 'Bedroom',
     description: 'Calm, easy and thoughtfully crafted interiors.',
-    image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=800&q=80',
     slug: 'bedroom'
   },
   {
@@ -495,7 +495,7 @@ export const ROOM_CATEGORIES = [
     id: 'rc-4',
     title: 'Kitchen',
     description: 'Clean, practical, and beautifully balanced pieces.',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80',
     slug: 'kitchen'
   }
 ];
@@ -525,7 +525,7 @@ export const NUMBERED_ROOM_ACCORDION = [
     description: 'Calm, cozy bedroom furniture thoughtfully designed with elegant detailing, soft textures, and balanced proportions to create a peaceful retreat, each piece lends comfort and sophistication, enhancing relaxation while adding timeless character, subtle luxury, and a warm, inviting atmosphere to your personal living space.',
     count: '98 Products',
     images: [
-      'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1600&q=85'
+      'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1600&q=85'
     ]
   },
   {
