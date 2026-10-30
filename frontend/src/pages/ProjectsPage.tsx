@@ -61,7 +61,7 @@ export const ProjectsPage: React.FC = () => {
           {/* Page Editorial Header */}
           <FadeIn direction="up">
             <div className="max-w-3xl mb-10 sm:mb-14 text-left">
-              <span className="text-[10px] sm:text-[11px] font-sans uppercase tracking-[0.25em] text-[#5D6853] font-medium">
+              <span className="text-[10px] sm:text-[11px] font-sans uppercase tracking-[0.25em] text-[#E05A2B] font-bold">
                 Archive of Built Commissions
               </span>
               <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-[#181716] mt-2">
@@ -89,7 +89,7 @@ export const ProjectsPage: React.FC = () => {
           {/* Loading State */}
           {loading && (
             <div className="py-24 flex flex-col items-center justify-center space-y-4">
-              <Loader2 className="w-8 h-8 animate-spin text-[#5D6853]" />
+              <Loader2 className="w-8 h-8 animate-spin text-[#E05A2B]" />
               <p className="text-xs uppercase tracking-[0.2em] font-sans text-[#757069]">
                 Accessing Studio Archives...
               </p>

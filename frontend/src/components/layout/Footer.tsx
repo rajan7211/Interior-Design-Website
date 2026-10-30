@@ -4,7 +4,7 @@ import { Shield } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="w-full bg-[#100F0E] text-white pt-10 sm:pt-14 pb-8 border-t border-neutral-800 text-left">
+    <footer className="w-full bg-[#100F0E] text-white pt-8 sm:pt-10 pb-8 border-t border-neutral-800 text-left">
       <div className="max-w-[1680px] mx-auto px-4 sm:px-8 lg:px-12">
         {/* Main 2-Column Grid (Matching Image 4) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 pb-10 border-b border-neutral-800">

@@ -63,7 +63,7 @@ export const AdminAppointmentsTable: React.FC<AdminAppointmentsTableProps> = ({
                 </td>
 
                 <td className="py-4 px-6">
-                  <span className="text-[#5D6853] font-medium font-serif text-sm">
+                  <span className="text-[#E05A2B] font-medium font-serif text-sm">
                     {apt.budgetBracket}
                   </span>
                 </td>
@@ -102,7 +102,7 @@ export const AdminAppointmentsTable: React.FC<AdminAppointmentsTableProps> = ({
                       href={apt.meetingLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-xs font-sans uppercase tracking-[0.14em] text-[#5D6853] hover:text-[#181716]"
+                      className="inline-flex items-center text-xs font-sans uppercase tracking-[0.14em] text-[#E05A2B] hover:text-[#181716]"
                     >
                       <Video className="w-3.5 h-3.5 mr-1" />
                       <span>Join Call</span>

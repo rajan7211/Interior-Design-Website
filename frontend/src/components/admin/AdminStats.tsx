@@ -54,7 +54,7 @@ export const AdminStats: React.FC<AdminStatsProps> = ({
             key={i}
             className={`p-6 border bg-[#FFFFFF] shadow-sm transition-all ${
               stat.highlight
-                ? 'border-[#5D6853] ring-1 ring-[#5D6853]/20'
+                ? 'border-[#E05A2B] ring-1 ring-[#E05A2B]/20'
                 : 'border-[#E7E2D8]'
             }`}
           >

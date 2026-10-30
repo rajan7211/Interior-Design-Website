@@ -30,7 +30,7 @@ export const ProjectDetailPage: React.FC = () => {
     return (
       <Layout>
         <div className="min-h-[60vh] flex flex-col items-center justify-center space-y-4">
-          <Loader2 className="w-8 h-8 animate-spin text-[#5D6853]" />
+          <Loader2 className="w-8 h-8 animate-spin text-[#E05A2B]" />
           <p className="text-xs uppercase tracking-[0.2em] font-sans text-[#757069]">
             Loading Monograph Details...
           </p>
@@ -196,7 +196,7 @@ export const ProjectDetailPage: React.FC = () => {
               {/* Materiality Palette Column */}
               <div className="lg:col-span-5 space-y-6">
                 <div className="bg-[#FFFFFF] border border-[#E7E2D8] p-6 sm:p-8 space-y-6 shadow-sm">
-                  <span className="text-[10px] uppercase font-sans tracking-[0.25em] text-[#5D6853] font-medium block">
+                  <span className="text-[10px] uppercase font-sans tracking-[0.25em] text-[#E05A2B] font-bold block">
                     Materiality & Guilds
                   </span>
                   <h3 className="font-serif text-xl sm:text-2xl font-light text-[#181716]">
@@ -205,7 +205,7 @@ export const ProjectDetailPage: React.FC = () => {
                   <ul className="space-y-3">
                     {project.materials.map((mat, i) => (
                       <li key={i} className="flex items-center space-x-3 text-xs sm:text-sm font-sans text-[#55504A] border-b border-[#F2EDE4] pb-2">
-                        <span className="w-1.5 h-1.5 bg-[#5D6853] rounded-full flex-shrink-0" />
+                        <span className="w-1.5 h-1.5 bg-[#E05A2B] rounded-full flex-shrink-0" />
                         <span>{mat}</span>
                       </li>
                     ))}
@@ -213,7 +213,7 @@ export const ProjectDetailPage: React.FC = () => {
 
                   <div className="pt-2">
                     <Link to={`/consultation?project=${encodeURIComponent(project.title)}`}>
-                      <Button variant="primary" size="md" className="w-full" rightIcon={<ArrowUpRight className="w-3.5 h-3.5" />}>
+                      <Button variant="primary" size="md" className="w-full bg-[#E05A2B] hover:bg-[#C94A1F] border-[#E05A2B] text-white shadow-sm" rightIcon={<ArrowUpRight className="w-3.5 h-3.5" />}>
                         Inquire for Similar Commission
                       </Button>
                     </Link>

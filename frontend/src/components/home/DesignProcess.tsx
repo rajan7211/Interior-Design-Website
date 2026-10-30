@@ -7,7 +7,7 @@ export const DesignProcess: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-3xl mb-12 sm:mb-16 text-left">
-          <span className="text-[10px] sm:text-[11px] font-sans uppercase tracking-[0.25em] text-[#5D6853] font-medium">
+          <span className="text-[10px] sm:text-[11px] font-sans uppercase tracking-[0.25em] text-[#E05A2B] font-bold">
             Architectural Methodology
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-[#181716] mt-2">
@@ -27,7 +27,7 @@ export const DesignProcess: React.FC = () => {
             >
               <div>
                 <div className="flex items-center justify-between pb-6 border-b border-[#E7E2D8] mb-6">
-                  <span className="font-serif text-2xl sm:text-3xl text-[#5D6853]">
+                  <span className="font-serif text-2xl sm:text-3xl text-[#E05A2B]">
                     {step.step}
                   </span>
                   <span className="text-[10px] uppercase font-sans tracking-[0.16em] text-[#847262] bg-[#EAE4D7] px-2.5 py-1">

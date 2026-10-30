@@ -33,7 +33,7 @@ export const ServiceDetailCard: React.FC<ServiceDetailCardProps> = ({ service, i
         {/* Narrative & Deliverables Column */}
         <div className={`lg:col-span-7 space-y-6 ${isReversed ? 'lg:order-1' : 'lg:order-2'}`}>
           <div className="space-y-2">
-            <span className="text-[10px] font-sans uppercase tracking-[0.25em] text-[#5D6853] font-medium">
+            <span className="text-[10px] font-sans uppercase tracking-[0.25em] text-[#E05A2B] font-bold">
               Duration: {service.timeline}
             </span>
             <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-light text-[#181716]">
@@ -55,7 +55,7 @@ export const ServiceDetailCard: React.FC<ServiceDetailCardProps> = ({ service, i
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {service.deliverables.map((item, idx) => (
                 <div key={idx} className="flex items-start space-x-2.5">
-                  <div className="p-1 bg-[#EEF1EB] text-[#5D6853] mt-0.5 flex-shrink-0">
+                  <div className="p-1 bg-[#FDF0EB] text-[#E05A2B] mt-0.5 flex-shrink-0">
                     <Check className="w-3.5 h-3.5" />
                   </div>
                   <div>

@@ -10,7 +10,7 @@ export const ServicesPreview: React.FC = () => {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-4">
           <div className="space-y-2">
-            <span className="text-[10px] sm:text-[11px] font-sans uppercase tracking-[0.25em] text-[#5D6853] font-medium">
+            <span className="text-[10px] sm:text-[11px] font-sans uppercase tracking-[0.25em] text-[#E05A2B] font-bold">
               Atelier Disciplines
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-[#181716]">
@@ -19,7 +19,7 @@ export const ServicesPreview: React.FC = () => {
           </div>
           <Link
             to="/services"
-            className="inline-flex items-center text-xs font-sans uppercase tracking-[0.2em] text-[#181716] hover:text-[#5D6853] transition-colors border-b border-[#181716] pb-1 w-fit"
+            className="inline-flex items-center text-xs font-sans uppercase tracking-[0.2em] text-[#181716] hover:text-[#E05A2B] transition-colors border-b border-[#181716] hover:border-[#E05A2B] pb-1 w-fit"
           >
             <span>Explore All Capabilities</span>
             <ArrowUpRight className="w-3.5 h-3.5 ml-1" />
@@ -38,7 +38,7 @@ export const ServicesPreview: React.FC = () => {
                   {service.number}
                 </span>
                 
-                <h3 className="font-serif text-xl sm:text-2xl font-normal text-[#181716] group-hover:text-[#5D6853] transition-colors">
+                <h3 className="font-serif text-xl sm:text-2xl font-normal text-[#181716] group-hover:text-[#E05A2B] transition-colors">
                   {service.title}
                 </h3>
 
@@ -53,7 +53,7 @@ export const ServicesPreview: React.FC = () => {
                 </span>
                 <Link
                   to="/services"
-                  className="p-1.5 text-[#181716] group-hover:text-[#5D6853] transition-colors"
+                  className="p-1.5 text-[#181716] group-hover:text-[#E05A2B] transition-colors"
                   aria-label={`View ${service.title}`}
                 >
                   <ArrowUpRight className="w-4 h-4" />

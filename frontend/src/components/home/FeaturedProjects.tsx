@@ -17,7 +17,7 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ projects }) 
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-4">
           <div className="space-y-2">
-            <span className="text-[10px] sm:text-[11px] font-sans uppercase tracking-[0.25em] text-[#5D6853] font-medium">
+            <span className="text-[10px] sm:text-[11px] font-sans uppercase tracking-[0.25em] text-[#E05A2B] font-bold">
               Curated Portfolio
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-[#181716]">
@@ -26,7 +26,7 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ projects }) 
           </div>
           <Link
             to="/projects"
-            className="inline-flex items-center text-xs font-sans uppercase tracking-[0.2em] text-[#181716] hover:text-[#5D6853] transition-colors border-b border-[#181716] pb-1 w-fit"
+            className="inline-flex items-center text-xs font-sans uppercase tracking-[0.2em] text-[#181716] hover:text-[#E05A2B] transition-colors border-b border-[#181716] hover:border-[#E05A2B] pb-1 w-fit"
           >
             <span>View All Works ({projects.length})</span>
             <ArrowUpRight className="w-3.5 h-3.5 ml-1" />
@@ -70,7 +70,7 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ projects }) 
                   }`}
                 >
                   <div className="flex flex-wrap items-center gap-2">
-                    <Badge variant="olive">{project.category}</Badge>
+                    <Badge variant="terracotta">{project.category}</Badge>
                     <span className="text-xs font-sans text-[#757069]">
                       {project.location} • {project.year}
                     </span>
@@ -79,7 +79,7 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ projects }) 
                   <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl font-light text-[#181716]">
                     <Link
                       to={`/projects/${project.slug}`}
-                      className="hover:text-[#5D6853] transition-colors"
+                      className="hover:text-[#E05A2B] transition-colors"
                     >
                       {project.title}
                     </Link>
@@ -96,9 +96,9 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ projects }) 
                   <div className="pt-2">
                     <Link
                       to={`/projects/${project.slug}`}
-                      className="inline-flex items-center text-xs font-sans uppercase tracking-[0.2em] font-medium text-[#181716] group hover:text-[#5D6853] transition-colors"
+                      className="inline-flex items-center text-xs font-sans uppercase tracking-[0.2em] font-medium text-[#181716] group hover:text-[#E05A2B] transition-colors"
                     >
-                      <span className="border-b border-[#181716] group-hover:border-[#5D6853] pb-0.5">
+                      <span className="border-b border-[#181716] group-hover:border-[#E05A2B] pb-0.5">
                         Discover Project
                       </span>
                       <ArrowUpRight className="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

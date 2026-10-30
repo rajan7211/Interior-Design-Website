@@ -63,9 +63,9 @@ export const PortfolioFilter: React.FC<PortfolioFilterProps> = ({
                 key={room}
                 type="button"
                 onClick={() => onSelectRoom(room)}
-                className={`px-3 py-1.5 text-[11px] font-sans transition-colors ${
+                className={`px-3 py-1.5 text-[11px] font-sans transition-colors rounded-full ${
                   isActive
-                    ? 'bg-[#5D6853] text-[#FBF9F5] font-medium'
+                    ? 'bg-[#E05A2B] text-white font-medium'
                     : 'text-[#757069] hover:text-[#181716] hover:bg-[#F2EDE4]'
                 }`}
               >

@@ -358,7 +358,7 @@ export const ProjectFormModal: React.FC<ProjectFormModalProps> = ({
               type="checkbox"
               checked={formData.featured}
               onChange={(e) => setFormData({ ...formData, featured: e.target.checked })}
-              className="w-4 h-4 text-[#5D6853] focus:ring-[#5D6853] border-[#E7E2D8]"
+              className="w-4 h-4 text-[#E05A2B] focus:ring-[#E05A2B] border-[#E7E2D8]"
             />
             <span>Feature on Studio Homepage</span>
           </label>
@@ -368,7 +368,7 @@ export const ProjectFormModal: React.FC<ProjectFormModalProps> = ({
               type="checkbox"
               checked={formData.published}
               onChange={(e) => setFormData({ ...formData, published: e.target.checked })}
-              className="w-4 h-4 text-[#5D6853] focus:ring-[#5D6853] border-[#E7E2D8]"
+              className="w-4 h-4 text-[#E05A2B] focus:ring-[#E05A2B] border-[#E7E2D8]"
             />
             <span>Published in Public Archives</span>
           </label>

@@ -13,7 +13,7 @@ export const AboutPage: React.FC = () => {
           {/* Header */}
           <FadeIn direction="up">
             <div className="max-w-3xl mb-12 sm:mb-16 text-left">
-              <span className="text-[10px] sm:text-[11px] font-sans uppercase tracking-[0.25em] text-[#5D6853] font-medium">
+              <span className="text-[10px] sm:text-[11px] font-sans uppercase tracking-[0.25em] text-[#E05A2B] font-bold">
                 Established 2012 • London & Worldwide
               </span>
               <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-[#181716] mt-2">
@@ -91,7 +91,7 @@ export const AboutPage: React.FC = () => {
           <div className="mb-20 sm:mb-28">
             <FadeIn direction="up">
               <div className="text-left mb-12">
-                <span className="text-[10px] font-sans uppercase tracking-[0.25em] text-[#5D6853] font-medium">
+                <span className="text-[10px] font-sans uppercase tracking-[0.25em] text-[#E05A2B] font-bold">
                   Atelier Direction
                 </span>
                 <h2 className="font-serif text-3xl sm:text-4xl font-light text-[#181716] mt-1">
@@ -115,7 +115,7 @@ export const AboutPage: React.FC = () => {
                       <h3 className="font-serif text-xl font-normal text-[#181716]">
                         {member.name}
                       </h3>
-                      <p className="text-xs uppercase tracking-[0.16em] font-sans text-[#5D6853] mt-0.5">
+                      <p className="text-xs uppercase tracking-[0.16em] font-sans text-[#E05A2B] font-medium mt-0.5">
                         {member.role}
                       </p>
                       <p className="text-[10px] uppercase tracking-[0.12em] font-sans text-[#757069] mt-0.5">
@@ -135,7 +135,7 @@ export const AboutPage: React.FC = () => {
           <div className="mb-20 sm:mb-28 text-left">
             <FadeIn direction="up">
               <div className="mb-10">
-                <span className="text-[10px] font-sans uppercase tracking-[0.25em] text-[#5D6853] font-medium">
+                <span className="text-[10px] font-sans uppercase tracking-[0.25em] text-[#E05A2B] font-bold">
                   Distinctions & Peer Recognition
                 </span>
                 <h2 className="font-serif text-3xl sm:text-4xl font-light text-[#181716] mt-1">
@@ -147,7 +147,7 @@ export const AboutPage: React.FC = () => {
               {STUDIO_AWARDS.map((award, i) => (
                 <FadeInStaggerItem key={i}>
                   <div className="bg-white border border-[#E7E2D8] p-6 space-y-2 hover:border-[#C5BBAF] transition-colors duration-300">
-                    <span className="text-xs font-serif text-[#5D6853] block">{award.year}</span>
+                    <span className="text-xs font-serif text-[#E05A2B] font-medium block">{award.year}</span>
                     <h3 className="font-serif text-lg font-light text-[#181716]">{award.title}</h3>
                     <p className="text-xs font-sans text-[#757069]">{award.organization}</p>
                     <p className="text-[10px] uppercase tracking-wider font-sans text-[#847262] pt-2 border-t border-[#F2EDE4]">{award.category}</p>
@@ -176,7 +176,7 @@ export const AboutPage: React.FC = () => {
                       {office.city} Atelier
                     </h3>
                     <div className="flex items-start text-xs font-sans text-[#55504A] pt-1">
-                      <MapPin className="w-3.5 h-3.5 mr-2 mt-0.5 text-[#5D6853] flex-shrink-0" />
+                      <MapPin className="w-3.5 h-3.5 mr-2 mt-0.5 text-[#E05A2B] flex-shrink-0" />
                       <span>{office.address}</span>
                     </div>
                     <div className="flex items-center text-xs font-sans text-[#757069]">

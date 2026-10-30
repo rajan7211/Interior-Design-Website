@@ -88,7 +88,7 @@ export const ContactPage: React.FC = () => {
           {/* Header */}
           <FadeIn direction="up">
             <div className="max-w-3xl mb-12 sm:mb-16 text-left">
-              <span className="text-[10px] sm:text-[11px] font-sans uppercase tracking-[0.25em] text-[#5D6853] font-medium">
+              <span className="text-[10px] sm:text-[11px] font-sans uppercase tracking-[0.25em] text-[#E05A2B] font-bold">
                 Private Inquiries
               </span>
               <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-[#181716] mt-2">
@@ -107,7 +107,7 @@ export const ContactPage: React.FC = () => {
                 <div className="bg-[#FFFFFF] border border-[#E7E2D8] p-6 sm:p-10 shadow-sm text-left">
                 {submittedInquiryId ? (
                   <div className="py-12 px-4 text-center space-y-5">
-                    <div className="inline-flex items-center justify-center w-14 h-14 bg-[#EEF1EB] text-[#5D6853] rounded-full mx-auto">
+                    <div className="inline-flex items-center justify-center w-14 h-14 bg-[#FDF0EB] text-[#E05A2B] rounded-full mx-auto">
                       <CheckCircle2 className="w-8 h-8" />
                     </div>
                     <h3 className="font-serif text-2xl sm:text-3xl font-light text-[#181716]">
@@ -231,7 +231,7 @@ export const ContactPage: React.FC = () => {
               <FadeIn direction="up" delay={0.2} className="space-y-8 text-left">
                 <div className="bg-[#F2EDE4] border border-[#E4DCD0] p-6 sm:p-8 space-y-6">
                   <div>
-                    <span className="text-[10px] uppercase font-sans tracking-[0.25em] text-[#5D6853] font-medium block">
+                    <span className="text-[10px] uppercase font-sans tracking-[0.25em] text-[#E05A2B] font-bold block">
                       Direct Contact
                     </span>
                     <h3 className="font-serif text-2xl font-light text-[#181716] mt-1">
@@ -246,7 +246,7 @@ export const ContactPage: React.FC = () => {
                           {office.city} Atelier
                         </h4>
                         <p className="text-xs font-sans text-[#55504A] flex items-start">
-                          <MapPin className="w-3.5 h-3.5 mr-2 mt-0.5 text-[#5D6853] flex-shrink-0" />
+                          <MapPin className="w-3.5 h-3.5 mr-2 mt-0.5 text-[#E05A2B] flex-shrink-0" />
                           <span>{office.address}</span>
                         </p>
                         <p className="text-xs font-sans text-[#757069] flex items-center">
@@ -274,7 +274,7 @@ export const ContactPage: React.FC = () => {
                   <p className="text-xs font-sans text-[#55504A] leading-relaxed">
                     For architectural publication rights, monograph imagery, and exhibition requests, please direct inquiries to:
                   </p>
-                  <p className="text-xs font-sans text-[#5D6853] font-medium">
+                  <p className="text-xs font-sans text-[#E05A2B] font-medium">
                     press@aurelleinteriors.com
                   </p>
                 </div>

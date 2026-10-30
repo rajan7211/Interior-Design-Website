@@ -9,9 +9,9 @@ export const NotFoundPage: React.FC = () => {
     <Layout>
       <div className="w-full bg-[#FBF9F5] py-24 sm:py-36 flex items-center justify-center text-center">
         <div className="max-w-xl mx-auto px-4 space-y-6">
-          <div className="inline-flex items-center space-x-2 text-[#5D6853]">
+          <div className="inline-flex items-center space-x-2 text-[#E05A2B]">
             <Compass className="w-4 h-4" />
-            <span className="text-[10px] sm:text-xs uppercase font-sans tracking-[0.25em]">
+            <span className="text-[10px] sm:text-xs uppercase font-sans tracking-[0.25em] font-bold">
               Error 404 • Coordinate Unresolved
             </span>
           </div>

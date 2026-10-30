@@ -97,7 +97,7 @@ export const AdminProjectsTable: React.FC<AdminProjectsTableProps> = ({
                     <button
                       type="button"
                       onClick={() => onEdit(project)}
-                      className="p-1.5 text-[#757069] hover:text-[#5D6853] transition-colors"
+                      className="p-1.5 text-[#757069] hover:text-[#E05A2B] transition-colors"
                       title="Edit project"
                     >
                       <Edit2 className="w-4 h-4" />

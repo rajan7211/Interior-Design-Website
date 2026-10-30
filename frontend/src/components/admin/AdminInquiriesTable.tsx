@@ -72,7 +72,7 @@ export const AdminInquiriesTable: React.FC<AdminInquiriesTableProps> = ({
                     </td>
 
                     <td className="py-4 px-6">
-                      <span className="text-[#5D6853] font-medium font-serif text-sm">
+                      <span className="text-[#E05A2B] font-medium font-serif text-sm">
                         {inq.budgetRange}
                       </span>
                       <p className="text-[11px] text-[#757069]">{inq.timeline}</p>
@@ -110,7 +110,7 @@ export const AdminInquiriesTable: React.FC<AdminInquiriesTableProps> = ({
                       <button
                         type="button"
                         onClick={() => setExpandedId(isExpanded ? null : inq.id)}
-                        className="text-xs uppercase font-sans tracking-[0.14em] text-[#5D6853] hover:text-[#181716] underline underline-offset-2"
+                        className="text-xs uppercase font-sans tracking-[0.14em] text-[#E05A2B] hover:text-[#181716] underline underline-offset-2"
                       >
                         {isExpanded ? 'Collapse' : 'Review'}
                       </button>

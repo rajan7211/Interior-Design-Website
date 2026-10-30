@@ -61,7 +61,7 @@ export const Modal: React.FC<ModalProps> = ({
         <div className="flex items-start justify-between border-b border-[#E7E2D8] pb-4 mb-6">
           <div>
             {subtitle && (
-              <p className="text-[10px] uppercase font-sans tracking-[0.2em] text-[#5D6853] mb-1">
+              <p className="text-[10px] uppercase font-sans tracking-[0.2em] text-[#E05A2B] font-bold mb-1">
                 {subtitle}
               </p>
             )}

@@ -14,7 +14,7 @@ export const ServicesPage: React.FC = () => {
           {/* Header */}
           <FadeIn direction="up">
             <div className="max-w-3xl mb-12 sm:mb-16 text-left">
-              <span className="text-[10px] sm:text-[11px] font-sans uppercase tracking-[0.25em] text-[#5D6853] font-medium">
+              <span className="text-[10px] sm:text-[11px] font-sans uppercase tracking-[0.25em] text-[#E05A2B] font-bold">
                 Architecture & Design Capabilities
               </span>
               <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-[#181716] mt-2">
@@ -50,7 +50,7 @@ export const ServicesPage: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-xs sm:text-sm font-sans text-[#55504A]">
               <div className="space-y-2">
                 <div className="flex items-center space-x-2 text-[#181716] font-medium">
-                  <Compass className="w-4 h-4 text-[#5D6853]" />
+                  <Compass className="w-4 h-4 text-[#E05A2B]" />
                   <h4>Strict Project Selectivity</h4>
                 </div>
                 <p className="leading-relaxed">
@@ -60,7 +60,7 @@ export const ServicesPage: React.FC = () => {
 
               <div className="space-y-2">
                 <div className="flex items-center space-x-2 text-[#181716] font-medium">
-                  <ShieldCheck className="w-4 h-4 text-[#5D6853]" />
+                  <ShieldCheck className="w-4 h-4 text-[#E05A2B]" />
                   <h4>Fiduciary Cost Transparency</h4>
                 </div>
                 <p className="leading-relaxed">
@@ -70,7 +70,7 @@ export const ServicesPage: React.FC = () => {
 
               <div className="space-y-2">
                 <div className="flex items-center space-x-2 text-[#181716] font-medium">
-                  <Sparkles className="w-4 h-4 text-[#5D6853]" />
+                  <Sparkles className="w-4 h-4 text-[#E05A2B]" />
                   <h4>Global Execution Reach</h4>
                 </div>
                 <p className="leading-relaxed">

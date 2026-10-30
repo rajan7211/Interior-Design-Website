@@ -36,11 +36,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           <span>{project.year} • {project.area}</span>
         </div>
 
-        <h3 className="font-serif text-2xl font-light text-[#181716] group-hover:text-[#5D6853] transition-colors flex items-center justify-between">
+        <h3 className="font-serif text-2xl font-light text-[#181716] group-hover:text-[#E05A2B] transition-colors flex items-center justify-between">
           <Link to={`/projects/${project.slug}`}>
             {project.title}
           </Link>
-          <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-[#5D6853]" />
+          <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-[#E05A2B]" />
         </h3>
 
         <p className="text-xs font-sans text-[#55504A] line-clamp-2 leading-relaxed">

@@ -25,7 +25,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, showFooter = true }) =
   const isHome = location.pathname === '/';
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FBF9F5] text-[#181716] overflow-x-hidden selection:bg-[#5D6853] selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[#FBF9F5] text-[#181716] overflow-x-hidden selection:bg-[#E05A2B] selection:text-white">
       <ScrollToTop />
       <Navbar />
       <motion.main

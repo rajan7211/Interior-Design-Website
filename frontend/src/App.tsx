@@ -18,7 +18,7 @@ const NotFoundPage = lazy(() => import('./pages/NotFoundPage').then((m) => ({ de
 
 const PageLoader: React.FC = () => (
   <div className="min-h-screen w-full flex flex-col items-center justify-center bg-[#FBF9F5] space-y-4">
-    <Loader2 className="w-8 h-8 animate-spin text-[#5D6853]" />
+    <Loader2 className="w-8 h-8 animate-spin text-[#E05A2B]" />
     <span className="font-serif text-lg tracking-[0.16em] text-[#181716]">AURELLE</span>
   </div>
 );

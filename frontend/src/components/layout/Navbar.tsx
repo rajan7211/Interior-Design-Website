@@ -20,6 +20,7 @@ export const Navbar: React.FC = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 25);
     };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -103,7 +104,7 @@ export const Navbar: React.FC = () => {
       <header
         className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#141312]/95 backdrop-blur-md py-3.5 border-b border-white/10 shadow-lg text-white'
+            ? 'bg-[#100F0E] py-3.5 border-b border-neutral-800 text-white shadow-xl'
             : 'bg-gradient-to-b from-black/80 via-black/40 to-transparent py-5 lg:py-6 text-white'
         }`}
       >

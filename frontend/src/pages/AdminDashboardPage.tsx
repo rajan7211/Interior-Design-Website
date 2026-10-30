@@ -314,7 +314,7 @@ export const AdminDashboardPage: React.FC = () => {
                   <div key={service.id} className="bg-white border border-[#E7E2D8] p-6 shadow-sm space-y-3">
                     <div className="flex items-center justify-between">
                       <span className="font-serif text-xl font-light text-[#847262]">{service.number}</span>
-                      <span className="text-[10px] uppercase font-sans tracking-[0.16em] text-[#5D6853] bg-[#EEF1EB] px-2 py-0.5">
+                      <span className="text-[10px] uppercase font-sans tracking-[0.16em] text-[#E05A2B] bg-[#FDF0EB] px-2 py-0.5">
                         {service.timeline}
                       </span>
                     </div>
