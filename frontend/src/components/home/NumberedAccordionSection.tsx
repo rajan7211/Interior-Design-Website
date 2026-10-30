@@ -92,7 +92,7 @@ export const NumberedAccordionSection: React.FC = () => {
                       </p>
                       <div className="pt-2">
                         <Link
-                          to={`/products?category=${encodeURIComponent(item.name.toLowerCase())}`}
+                          to={`/furniture?category=${encodeURIComponent(item.name.toLowerCase())}`}
                           onClick={(e) => e.stopPropagation()}
                           className="inline-flex items-center space-x-2 px-6 py-3 rounded-full bg-white text-black hover:bg-[#E05A2B] hover:text-white transition-all text-xs font-bold uppercase tracking-wider group/cta shadow-xl"
                         >
@@ -171,7 +171,7 @@ export const NumberedAccordionSection: React.FC = () => {
                   </p>
                   <div className="pt-2">
                     <Link
-                      to={`/products?category=${encodeURIComponent(activeItem.name.toLowerCase())}`}
+                      to={`/furniture?category=${encodeURIComponent(activeItem.name.toLowerCase())}`}
                       className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-full bg-white text-black hover:bg-[#E05A2B] hover:text-white transition-all text-xs font-bold uppercase tracking-wider"
                     >
                       <span>Explore Collection</span>

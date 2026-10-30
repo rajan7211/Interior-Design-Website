@@ -18,12 +18,12 @@ export const Navbar: React.FC = () => {
 
   useEffect(() => {
     setMobileMenuOpen(false);
-  }, [location.pathname]);
+  }, [location.pathname, location.search]);
 
   const navLinks = [
     { label: 'Home', path: '/' },
     { label: 'Collections', path: '/projects' },
-    { label: 'Furniture', path: '/projects?category=Residential%20Architecture' },
+    { label: 'Furniture', path: '/furniture' },
     { label: 'Services', path: '/services' },
     { label: 'Contact', path: '/contact' },
   ];
@@ -55,7 +55,8 @@ export const Navbar: React.FC = () => {
                 const isActive =
                   link.path === '/'
                     ? location.pathname === '/'
-                    : location.pathname.startsWith(link.path);
+                    : location.pathname.startsWith(link.path) ||
+                      (link.path === '/furniture' && location.pathname.startsWith('/products'));
 
                 return (
                   <Link
@@ -153,6 +154,7 @@ export const Navbar: React.FC = () => {
                   <Link
                     key={link.label}
                     to={link.path}
+                    onClick={() => setMobileMenuOpen(false)}
                     className="text-2xl font-sans font-medium text-white hover:text-[#E05A2B] transition-colors"
                   >
                     {link.label}

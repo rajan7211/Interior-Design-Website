@@ -139,7 +139,12 @@ export interface FurnitureProduct {
   price: string;
   image: string;
   category: string;
+  roomSlug?: string;
   badge?: string;
+  materials?: string;
+  dimensions?: string;
+  description?: string;
+  inStock?: boolean;
 }
 
 export interface Article {

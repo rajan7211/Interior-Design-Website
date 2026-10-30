@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FEATURED_PRODUCTS } from '../../data/mockData';
-import { ShoppingBag } from 'lucide-react';
+import { ShoppingBag, ArrowUpRight } from 'lucide-react';
 import { FadeIn, FadeInStagger, FadeInStaggerItem } from '../ui/Motion';
 
 export const FeaturedCollectionSection: React.FC = () => {
@@ -10,13 +10,22 @@ export const FeaturedCollectionSection: React.FC = () => {
       <div className="max-w-[1680px] mx-auto px-4 sm:px-8 lg:px-12">
         {/* Header */}
         <FadeIn direction="up">
-          <div className="mb-12 sm:mb-16">
-            <span className="text-xs font-sans uppercase font-bold tracking-wider text-neutral-400 block mb-1">
-              Best Selling
-            </span>
-            <h2 className="font-sans font-extrabold text-3xl sm:text-4xl text-[#111111] tracking-tight">
-              Featured Collection
-            </h2>
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 sm:mb-14 gap-4">
+            <div>
+              <span className="text-xs font-sans uppercase font-bold tracking-wider text-neutral-400 block mb-1">
+                Best Selling
+              </span>
+              <h2 className="font-sans font-extrabold text-3xl sm:text-4xl text-[#111111] tracking-tight">
+                Featured Collection
+              </h2>
+            </div>
+            <Link
+              to="/furniture"
+              className="inline-flex items-center space-x-1.5 text-xs font-sans font-bold uppercase tracking-wider text-[#E05A2B] hover:text-[#C94A1F] transition-colors"
+            >
+              <span>Explore Entire Catalog</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </Link>
           </div>
         </FadeIn>
 

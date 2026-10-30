@@ -1,4 +1,4 @@
-import { Project, Service, Testimonial, StudioMember, StudioAward, CustomerInquiry, ConsultationAppointment, Hotspot, Article } from '../types';
+import { Project, Service, Testimonial, StudioMember, StudioAward, CustomerInquiry, ConsultationAppointment, Hotspot, Article, FurnitureProduct } from '../types';
 
 export const STUDIO_INFO = {
   name: 'AURELLE Interiors',
@@ -187,6 +187,125 @@ export const INITIAL_PROJECTS: Project[] = [
     featured: false,
     published: true,
     clientTier: 'Swiss Luxury Manufacture'
+  },
+  {
+    id: 'proj-07',
+    slug: 'trousdale-estates-modernist',
+    title: 'Trousdale Estates Pavilion',
+    subtitle: 'Mid-Century Organic Modernism Reimagined for California Living',
+    category: 'Residential Architecture',
+    roomTypes: ['Living Sanctuary', 'Outdoor Living', 'Master Suite', 'Culinary Studio'],
+    location: 'Beverly Hills, California',
+    year: 2024,
+    area: '7,400 sq.ft',
+    duration: '16 Months',
+    coverImage: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1600&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=1600&q=80'
+    ],
+    description: 'Cantilevered rooflines, frameless floor-to-ceiling glass, and hand-cast terrazzo connect interior salons with sunken olive tree courtyards.',
+    architecturalStory: 'Paying homage to mid-century Los Angeles masters, this pavilion features custom bookmatched teak paneling, floating bronze hearths, and seamless transition from the main living sanctuary to an architectural zero-edge pool overlooking the Pacific.',
+    materials: ['Honed Cast Terrazzo', 'Warm Teak Millwork', 'Aged Patinated Bronze', 'Custom Textured Linen', 'Charcoal Basalt'],
+    featured: true,
+    published: true,
+    clientTier: 'Private Tech Entrepreneur'
+  },
+  {
+    id: 'proj-08',
+    slug: 'lake-zurich-alpine-penthouse',
+    title: 'Lake Zurich Alpine Aerie',
+    subtitle: 'Minimalist Duplex Overlooking the Glarus Alps',
+    category: 'Penthouse & Loft',
+    roomTypes: ['Living Sanctuary', 'Library & Study', 'Master Suite', 'Bath & Spa'],
+    location: 'Enge, Zurich, Switzerland',
+    year: 2024,
+    area: '5,200 sq.ft',
+    duration: '14 Months',
+    coverImage: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1600&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=80'
+    ],
+    description: 'Monolithic Valser quartzite, smoked Swiss larch, and acoustic cashmere panelling form an alpine haven bathed in low winter light.',
+    architecturalStory: 'Arranged across two cascading top levels of a lakeside structure, the penthouse is centered on a dual-sided fluted quartzite fireplace. Custom cantilevered shelving lines the two-story private study, framing views of snow-draped alpine peaks across the lake.',
+    materials: ['Valser Swiss Quartzite', 'Smoked European Larch', 'Acoustic Cashmere Fabric', 'Cast Gunmetal Fixtures', 'Brushed Aluminum'],
+    featured: true,
+    published: true,
+    clientTier: 'Private Wealth Principal'
+  },
+  {
+    id: 'proj-09',
+    slug: 'costa-smeralda-cliffside-villa',
+    title: 'Villa Cala di Volpe',
+    subtitle: 'Sculptural Monolithic Villa Anchored in Sardinian Granite',
+    category: 'Coastal Villa',
+    roomTypes: ['Living Sanctuary', 'Outdoor Living', 'Culinary Studio', 'Bath & Spa'],
+    location: 'Porto Cervo, Sardinia, Italy',
+    year: 2023,
+    area: '9,600 sq.ft',
+    duration: '24 Months',
+    coverImage: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80'
+    ],
+    description: 'Organic curved whitewashed masonry emerging organically from indigenous pink granite boulders above the Mediterranean sea.',
+    architecturalStory: 'Designed in dialogue with the natural wind-sculpted granite topography of Costa Smeralda, Villa Cala di Volpe blurs the boundary between geology and architecture. Sheltered outdoor dining pergolas, hand-troweled lime microcement terraces, and custom marine-grade teak louvers frame turquoise coastal inlets.',
+    materials: ['Sardinian Pink Granite', 'Natural Troweled Microcement', 'Sun-bleached Teak', 'Hand-glazed Cotto Tiles', 'Raw Unbleached Linen'],
+    featured: false,
+    published: true,
+    clientTier: 'International Family Office'
+  },
+  {
+    id: 'proj-10',
+    slug: 'oxfordshire-stone-barn-conversion',
+    title: 'The Great Tew Barn Conversion',
+    subtitle: '18th-Century Agricultural Heritage Reborn with Crittall Architecture',
+    category: 'Heritage Restoration',
+    roomTypes: ['Living Sanctuary', 'Culinary Studio', 'Library & Study', 'Master Suite'],
+    location: 'Chipping Norton, Oxfordshire, UK',
+    year: 2024,
+    area: '6,300 sq.ft',
+    duration: '15 Months',
+    coverImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=80'
+    ],
+    description: 'Soaring cathedral ceilings with hand-hewn English oak trusses, blackened steel Crittall glazed screens, and warm lime-washed stonework.',
+    architecturalStory: 'The barn was sensitively restored to celebrate its 250-year-old agricultural volume. A dramatic freestanding mezzanine library floats above the open-plan culinary studio and great room, illuminated by double-height Crittall steel apertures that open to the rolling Cotswold hills.',
+    materials: ['Cotswold Oolitic Limestone', 'Salvaged English Heart Oak', 'Blackened Steel Crittall Glazing', 'Honed Belgian Blue Stone', 'Handwoven Wool Bouclé'],
+    featured: false,
+    published: true,
+    clientTier: 'Private Estate Owner'
+  },
+  {
+    id: 'proj-11',
+    slug: 'place-vendome-haute-joaillerie',
+    title: 'Place Vendôme Private Salon',
+    subtitle: 'Intimate Client Lounge & Bespoke Commissioning Gallery',
+    category: 'Commercial Atelier',
+    roomTypes: ['Living Sanctuary', 'Library & Study'],
+    location: '1st Arrondissement, Paris, France',
+    year: 2024,
+    area: '3,200 sq.ft',
+    duration: '10 Months',
+    coverImage: 'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1600&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?auto=format&fit=crop&w=1600&q=80'
+    ],
+    description: 'Curved fluted Spanish alabaster, custom mohair velvet alcoves, and private commissioning vaults designed for high-jewelry collectors.',
+    architecturalStory: 'Located within a 17th-century hôtel particulier on Place Vendôme, this private atelier balances museum-grade security with poetic intimacy. Concealed acoustic paneling and calibrated optical spotlighting allow gemstones to be appraised in perfect natural-spectrum light.',
+    materials: ['Spanish Translucent Alabaster', 'Dedar Mohair Velvet', 'Antiqued Cast Bronze', 'Saint-Laurent Noir Marble', 'Bespoke Silk Carpeting'],
+    featured: false,
+    published: true,
+    clientTier: 'French High-Jewelry Maison'
   }
 ];
 
@@ -466,6 +585,271 @@ export const FEATURED_PRODUCTS = [
     price: '₹34,000',
     category: 'Lighting',
     image: 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=80'
+  }
+];
+
+export const FURNITURE_CATALOG: FurnitureProduct[] = [
+  // Living Room
+  {
+    id: 'furn-01',
+    title: 'Billow Bouclé Sofa',
+    price: '₹84,999',
+    category: 'Living Room',
+    roomSlug: 'living',
+    badge: 'Signature',
+    materials: 'Textured Wool Bouclé, Kiln-Dried European Beech',
+    dimensions: '240W × 105D × 74H cm',
+    description: 'Sculptural organic curvature offering deep, cloud-like seating with architectural low-slung proportions.',
+    image: 'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=800&q=80',
+    inStock: true
+  },
+  {
+    id: 'furn-02',
+    title: 'Nara Mustard Lounge Chair',
+    price: '₹76,000',
+    category: 'Living Room',
+    roomSlug: 'living',
+    badge: 'Popular',
+    materials: 'Italian Bouclé, Solid Natural Beech Frame',
+    dimensions: '88W × 92D × 78H cm',
+    description: 'Generous ergonomic contours wrapped in warm honey-mustard bouclé with exposed timber joinery.',
+    image: 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&w=800&q=80',
+    inStock: true
+  },
+  {
+    id: 'furn-03',
+    title: 'Verona Travertine Coffee Table',
+    price: '₹58,000',
+    category: 'Living Room',
+    roomSlug: 'living',
+    badge: 'Bespoke',
+    materials: 'Honed Roman Travertine, Monolithic Pedestal',
+    dimensions: '130W × 75D × 36H cm',
+    description: 'Pure geometric form carved from open-pore Italian travertine with softly chamfered edges.',
+    image: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=800&q=80',
+    inStock: true
+  },
+  {
+    id: 'furn-04',
+    title: 'Kyoto Fluted Media Console',
+    price: '₹68,500',
+    category: 'Living Room',
+    roomSlug: 'living',
+    materials: 'Smoked Oak, Antiqued Bronze Hardware',
+    dimensions: '200W × 48D × 52H cm',
+    description: 'Precision tambour sliding doors concealing acoustic AV bays with integrated cord routing.',
+    image: 'https://images.unsplash.com/photo-1532372320572-cda25653a26d?auto=format&fit=crop&w=800&q=80',
+    inStock: false
+  },
+
+  // Dining & Culinary
+  {
+    id: 'furn-05',
+    title: 'Calacatta Viola Monolith Dining Table',
+    price: '₹1,45,000',
+    category: 'Dining',
+    roomSlug: 'dining',
+    badge: 'Masterpiece',
+    materials: 'Bookmatched Italian Marble, Concealed Steel Core',
+    dimensions: '260W × 110D × 75H cm',
+    description: 'Monolithic statement dining table showcasing bold purple veining on honed crystalline marble.',
+    image: 'https://images.unsplash.com/photo-1577140917170-285929fb55b7?auto=format&fit=crop&w=800&q=80',
+    inStock: true
+  },
+  {
+    id: 'furn-06',
+    title: 'Eura Bar & Counter Chair',
+    price: '₹42,500',
+    category: 'Dining',
+    roomSlug: 'dining',
+    materials: 'Saddlery Calfskin Leather, Patinated Bronze Frame',
+    dimensions: '52W × 54D × 96H cm',
+    description: 'Refined silhouette featuring hand-stitched cognac leather slung over minimalist bronze rod work.',
+    image: 'https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&w=800&q=80',
+    inStock: true
+  },
+  {
+    id: 'furn-07',
+    title: 'Minimalist Cast Stool',
+    price: '₹21,500',
+    category: 'Dining',
+    roomSlug: 'dining',
+    materials: 'Recycled Cast Aluminum, Wax Polished',
+    dimensions: '38W × 38D × 45H cm',
+    description: 'Sculptural accent stool doubles as an architectural side table or supplemental dining seating.',
+    image: 'https://images.unsplash.com/photo-1612372606404-0ab33e7187ee?auto=format&fit=crop&w=800&q=80',
+    inStock: true
+  },
+  {
+    id: 'furn-08',
+    title: 'Atelier Walnut Credenza',
+    price: '₹92,000',
+    category: 'Dining',
+    roomSlug: 'dining',
+    badge: 'Bespoke',
+    materials: 'European Walnut, Nero Marquina Inset Marble',
+    dimensions: '210W × 50D × 76H cm',
+    description: 'Low-profile culinary storage with soft-close velvet lined silverware drawers and wine rack.',
+    image: 'https://images.unsplash.com/photo-1544457070-4cd773b4d71e?auto=format&fit=crop&w=800&q=80',
+    inStock: true
+  },
+
+  // Bedroom
+  {
+    id: 'furn-09',
+    title: 'Koto Low-Profile Platform Bed',
+    price: '₹1,18,000',
+    category: 'Bedroom',
+    roomSlug: 'bedroom',
+    badge: 'Signature',
+    materials: 'Belgian Linen Upholstery, Solid White Oak Base',
+    dimensions: '215W × 225L × 90H cm (King)',
+    description: 'Architectural Japanese-Scandinavian platform bed with floating cantilevered side ledges.',
+    image: 'https://images.unsplash.com/photo-1617325247661-675ab4b64ae2?auto=format&fit=crop&w=800&q=80',
+    inStock: true
+  },
+  {
+    id: 'furn-10',
+    title: 'Alva Floating Nightstand',
+    price: '₹32,000',
+    category: 'Bedroom',
+    roomSlug: 'bedroom',
+    materials: 'Smoked Oak, Suede Interior Drawer Lining',
+    dimensions: '55W × 42D × 24H cm',
+    description: 'Wall-mounted floating silhouette keeping floor planes continuous and uncluttered.',
+    image: 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80',
+    inStock: true
+  },
+  {
+    id: 'furn-11',
+    title: 'Sora Bouclé Daybed Bench',
+    price: '₹48,000',
+    category: 'Bedroom',
+    roomSlug: 'bedroom',
+    materials: 'Textured Wool Bouclé, Brushed Brass Plinth',
+    dimensions: '160W × 50D × 44H cm',
+    description: 'End-of-bed accent bench with cylindrical bolster pillow and seamless tailored upholstery.',
+    image: 'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?auto=format&fit=crop&w=800&q=80',
+    inStock: true
+  },
+
+  // Workspace & Study
+  {
+    id: 'furn-12',
+    title: 'Aura Executive Desk',
+    price: '₹95,000',
+    category: 'Workspace',
+    roomSlug: 'workspace',
+    badge: 'New',
+    materials: 'Solid Smoked Walnut, Saddle Leather Desk Mat',
+    dimensions: '180W × 85D × 75H cm',
+    description: 'Minimalist study centerpiece with integrated wireless charging and concealed power bay.',
+    image: 'https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?auto=format&fit=crop&w=800&q=80',
+    inStock: true
+  },
+  {
+    id: 'furn-13',
+    title: 'Tate Swivel Desk Armchair',
+    price: '₹54,000',
+    category: 'Workspace',
+    roomSlug: 'workspace',
+    materials: 'Full-Grain Caramel Leather, Cast Bronze Base',
+    dimensions: '64W × 66D × 86H cm',
+    description: 'Ergonomic lumbar support concealed within a sculptural silhouette suited for executive studies.',
+    image: 'https://images.unsplash.com/photo-1580480055273-228ff5388ef8?auto=format&fit=crop&w=800&q=80',
+    inStock: true
+  },
+  {
+    id: 'furn-14',
+    title: 'Cantilever Library Wall Unit',
+    price: '₹1,25,000',
+    category: 'Workspace',
+    roomSlug: 'workspace',
+    badge: 'Bespoke',
+    materials: 'Smoked European Walnut, Integrated Warm LED',
+    dimensions: '220W × 40D × 240H cm',
+    description: 'Floor-to-ceiling modular joinery calibrated for art books, ceramic vessels, and curiosities.',
+    image: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=800&q=80',
+    inStock: false
+  },
+
+  // Lighting & Accents
+  {
+    id: 'furn-15',
+    title: 'Nordic Ceramic Table Lamp',
+    price: '₹34,000',
+    category: 'Lighting',
+    roomSlug: 'lighting',
+    materials: 'Sculptural Ceramic, Textured Natural Linen',
+    dimensions: '42W × 42D × 65H cm',
+    description: 'Tactile artisanal ceramic base casting warm ambient illumination through textured linen.',
+    image: 'https://images.unsplash.com/photo-1543198126-a8ad8e47fb22?auto=format&fit=crop&w=800&q=80',
+    inStock: true
+  },
+  {
+    id: 'furn-16',
+    title: 'Industrial Brass Pendant Light',
+    price: '₹68,000',
+    category: 'Lighting',
+    roomSlug: 'lighting',
+    badge: 'Artisanal',
+    materials: 'Hand-Brushed Brass, Antiqued Bronze Rod',
+    dimensions: '45cm Diameter × Adjustable Drop',
+    description: 'Hand-brushed brass fixture radiating focused warm illumination over kitchen islands and intimate dining.',
+    image: 'https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=800&q=80',
+    inStock: true
+  },
+  {
+    id: 'furn-17',
+    title: 'Autumn Birch Framed Canvas',
+    price: '₹38,500',
+    category: 'Lighting',
+    roomSlug: 'lighting',
+    materials: 'Archival Giclée, Solid Stained Walnut Frame',
+    dimensions: '100W × 140H cm',
+    description: 'Limited edition minimalist abstract canvas print capturing warm seasonal light.',
+    image: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=800&q=80',
+    inStock: true
+  },
+  {
+    id: 'furn-18',
+    title: 'Stoneware Botanical Vessel',
+    price: '₹14,500',
+    category: 'Lighting',
+    roomSlug: 'lighting',
+    materials: 'Hand-Thrown Unglazed Sand Stoneware',
+    dimensions: '28W × 28D × 45H cm',
+    description: 'Wheel-thrown artisanal vase with raw tactile texture designed for dry botanical curation.',
+    image: 'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=800&q=80',
+    inStock: true
+  },
+
+  // Outdoor & Terrace
+  {
+    id: 'furn-19',
+    title: 'Kyoto Teak Lounger & Daybed',
+    price: '₹56,000',
+    category: 'Outdoor',
+    roomSlug: 'outdoor',
+    badge: 'Weatherproof',
+    materials: 'Grade-A Sustainable Teak, Sunbrella Marine Fabric',
+    dimensions: '200W × 80D × 35H cm',
+    description: 'Clean Scandinavian lines crafted from solid Indonesian teak built to patina gracefully outdoors.',
+    image: 'https://images.unsplash.com/photo-1519974719765-e6559eac2575?auto=format&fit=crop&w=800&q=80',
+    inStock: true
+  },
+  {
+    id: 'furn-20',
+    title: 'Solstice Cast Concrete Dining Table',
+    price: '₹88,000',
+    category: 'Outdoor',
+    roomSlug: 'outdoor',
+    badge: 'Signature',
+    materials: 'Sealed Glass-Fiber Concrete, Charcoal Powder-Coat Aluminum',
+    dimensions: '220W × 100D × 75H cm',
+    description: 'Sculptural outdoor dining table engineered for weather resistance and timeless modern gatherings.',
+    image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80',
+    inStock: true
   }
 ];
 

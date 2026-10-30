@@ -109,7 +109,7 @@ export const ExploreCollectionSection: React.FC = () => {
 
               {/* Action Button */}
               <div className="pt-6 sm:pt-8">
-                <Link to="/products">
+                <Link to="/furniture">
                   <span className="inline-flex items-center px-6 py-3.5 rounded-full bg-[#E05A2B] hover:bg-[#C94A1F] text-white text-xs font-bold font-sans uppercase tracking-wider transition-all shadow-md space-x-2">
                     <span>Explore All Collections</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
@@ -155,7 +155,7 @@ export const ExploreCollectionSection: React.FC = () => {
                   </div>
 
                   <Link
-                    to={`/products?category=${encodeURIComponent(activeCategory.slug)}`}
+                    to={`/furniture?category=${encodeURIComponent(activeCategory.slug)}`}
                     className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-full bg-white text-black hover:bg-[#E05A2B] hover:text-white transition-all text-xs font-bold uppercase tracking-wider shadow-lg flex-shrink-0"
                   >
                     <span>View Collection</span>

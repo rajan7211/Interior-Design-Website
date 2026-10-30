@@ -59,9 +59,16 @@ const setStored = <T>(key: string, data: T): void => {
   }
 };
 
-// Seed storage initially if empty
-if (!localStorage.getItem(STORAGE_KEYS.PROJECTS)) {
+// Seed or synchronize storage with baseline projects
+const storedProjects = getStored<Project[]>(STORAGE_KEYS.PROJECTS, []);
+if (storedProjects.length === 0) {
   setStored(STORAGE_KEYS.PROJECTS, INITIAL_PROJECTS);
+} else {
+  const existingIds = new Set(storedProjects.map((p) => p.id));
+  const newBaseline = INITIAL_PROJECTS.filter((p) => !existingIds.has(p.id));
+  if (newBaseline.length > 0) {
+    setStored(STORAGE_KEYS.PROJECTS, [...storedProjects, ...newBaseline]);
+  }
 }
 if (!localStorage.getItem(STORAGE_KEYS.INQUIRIES)) {
   setStored(STORAGE_KEYS.INQUIRIES, INITIAL_INQUIRIES);

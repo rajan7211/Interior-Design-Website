@@ -25,7 +25,7 @@ export const ExclusiveFurnitureSection: React.FC = () => {
             {ROOM_CATEGORIES.map((room) => (
               <FadeInStaggerItem key={room.id}>
                 <Link
-                  to="/projects"
+                  to={`/furniture?category=${encodeURIComponent(room.slug)}`}
                   className="group flex flex-col justify-between"
                 >
                   <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-neutral-100 shadow-sm mb-4">

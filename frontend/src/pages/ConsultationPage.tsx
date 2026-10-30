@@ -33,6 +33,7 @@ const SERVICE_OPTIONS = [
   { value: 'Full Interior Architecture', label: 'Full Interior Architecture' },
   { value: 'Bespoke Millwork & Material Craft', label: 'Bespoke Millwork & Material Craft' },
   { value: 'Curated FF&E & Art Advisory', label: 'Curated FF&E & Art Advisory' },
+  { value: 'Custom Furniture & Bespoke Commission', label: 'Custom Furniture & Bespoke Commission' },
   { value: 'Turnkey Project Management', label: 'Turnkey Project Management' },
   { value: 'Comprehensive Masterplan (All Disciplines)', label: 'Comprehensive Masterplan (All Disciplines)' },
 ];
@@ -68,8 +69,20 @@ const TIME_SLOTS = [
 export const ConsultationPage: React.FC = () => {
   const routerLocation = useLocation();
   const searchParams = new URLSearchParams(routerLocation.search);
-  const prefillService = searchParams.get('service') || '';
+  const rawService = searchParams.get('service') || '';
   const prefillProject = searchParams.get('project') || '';
+  const prefillItem = searchParams.get('item') || '';
+
+  // Map incoming service query to exact select option if related to furniture
+  const prefillService = rawService.toLowerCase().includes('furniture')
+    ? 'Custom Furniture & Bespoke Commission'
+    : rawService;
+
+  const initialNotes = prefillItem
+    ? `Inquiring regarding order of "${prefillItem}". `
+    : prefillProject
+    ? `Inquiring based on interest in ${prefillProject}. `
+    : '';
 
   const [bookingConfirmedId, setBookingConfirmedId] = useState<string | null>(null);
 
@@ -92,7 +105,7 @@ export const ConsultationPage: React.FC = () => {
       budgetBracket: '',
       preferredDate: '',
       preferredTimeSlot: '',
-      notesAndVision: prefillProject ? `Inquiring based on interest in ${prefillProject}. ` : '',
+      notesAndVision: initialNotes,
     },
   });
 
@@ -100,7 +113,10 @@ export const ConsultationPage: React.FC = () => {
     if (prefillService) {
       setValue('serviceInterest', prefillService);
     }
-  }, [prefillService, setValue]);
+    if (prefillItem) {
+      setValue('notesAndVision', `Inquiring regarding order of "${prefillItem}". `);
+    }
+  }, [prefillService, prefillItem, setValue]);
 
   const onSubmit = async (data: ConsultationSchemaType) => {
     try {
