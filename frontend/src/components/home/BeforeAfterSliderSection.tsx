@@ -31,13 +31,18 @@ export const BeforeAfterSliderSection: React.FC = () => {
         <FadeIn direction="up">
           <div
             ref={containerRef}
-          onMouseDown={() => { isDragging.current = true; }}
-          onMouseUp={() => { isDragging.current = false; }}
-          onMouseLeave={() => { isDragging.current = false; }}
-          onMouseMove={handleMouseMove}
-          onTouchMove={handleTouchMove}
-          className="relative w-full aspect-[16/10] sm:aspect-[21/10] rounded-3xl overflow-hidden shadow-2xl cursor-ew-resize select-none"
-        >
+            onMouseDown={() => { isDragging.current = true; }}
+            onMouseUp={() => { isDragging.current = false; }}
+            onMouseLeave={() => { isDragging.current = false; }}
+            onMouseMove={handleMouseMove}
+            onTouchStart={(e) => {
+              isDragging.current = true;
+              if (e.touches && e.touches[0]) handleMove(e.touches[0].clientX);
+            }}
+            onTouchEnd={() => { isDragging.current = false; }}
+            onTouchMove={handleTouchMove}
+            className="relative w-full aspect-[4/3] sm:aspect-[16/10] lg:aspect-[21/10] rounded-3xl overflow-hidden shadow-2xl cursor-ew-resize select-none"
+          >
           {/* Base / "Original" Image (Right Side) */}
           <img
             src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=2400&q=85"
@@ -46,7 +51,7 @@ export const BeforeAfterSliderSection: React.FC = () => {
           />
 
           {/* Original Badge (Top Right) */}
-          <div className="absolute top-6 right-6 z-10 px-3.5 py-1.5 rounded-lg bg-white/90 backdrop-blur-md text-[11px] font-sans font-bold uppercase tracking-wider text-black shadow-md">
+          <div className="absolute top-3.5 sm:top-6 right-3.5 sm:right-6 z-10 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg bg-white/90 backdrop-blur-md text-[10px] sm:text-[11px] font-sans font-bold uppercase tracking-wider text-black shadow-md">
             Original
           </div>
 
@@ -65,7 +70,7 @@ export const BeforeAfterSliderSection: React.FC = () => {
               }}
             />
             {/* Reimagine Badge (Top Left) */}
-            <div className="absolute top-6 left-6 z-20 px-3.5 py-1.5 rounded-lg bg-[#E05A2B] text-white text-[11px] font-sans font-bold uppercase tracking-wider shadow-md">
+            <div className="absolute top-3.5 sm:top-6 left-3.5 sm:left-6 z-20 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg bg-[#E05A2B] text-white text-[10px] sm:text-[11px] font-sans font-bold uppercase tracking-wider shadow-md">
               Reimagine
             </div>
           </div>
@@ -76,16 +81,16 @@ export const BeforeAfterSliderSection: React.FC = () => {
             className="absolute inset-y-0 -translate-x-1/2 z-30 pointer-events-none flex items-center justify-center"
           >
             <div className="w-[2px] h-full bg-white shadow-xl" />
-            <div className="absolute w-10 h-10 rounded-full bg-white text-black shadow-2xl flex items-center justify-center font-bold text-xs pointer-events-auto cursor-ew-resize hover:scale-110 transition-transform">
+            <div className="absolute w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white text-black shadow-2xl flex items-center justify-center font-bold text-xs pointer-events-auto cursor-ew-resize hover:scale-110 transition-transform">
               <span>‹ ›</span>
             </div>
           </div>
 
-          {/* Bottom Left CTA Pill (Matching Image 2) */}
-          <div className="absolute bottom-6 left-6 z-30 pointer-events-auto">
+          {/* Bottom Left CTA Pill */}
+          <div className="absolute bottom-3 sm:bottom-6 left-3 sm:left-6 right-3 sm:right-auto z-30 pointer-events-auto">
             <button
               type="button"
-              className="inline-flex items-center px-5 py-3 rounded-xl bg-black/80 hover:bg-black backdrop-blur-md text-white text-xs font-bold font-sans tracking-wide transition-all shadow-xl space-x-2"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl bg-black/80 hover:bg-black backdrop-blur-md text-white text-[11px] sm:text-xs font-bold font-sans tracking-wide transition-all shadow-xl space-x-2"
             >
               <span>Start Deciding 3 Free AI Design</span>
               <Sparkles className="w-3.5 h-3.5 text-[#E05A2B]" />

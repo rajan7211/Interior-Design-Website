@@ -149,7 +149,7 @@ export const Navbar: React.FC = () => {
             </nav>
 
             {/* Right Action Icons & Login Pill */}
-            <div className="hidden sm:flex items-center space-x-4 lg:space-x-5">
+            <div className="hidden md:flex items-center space-x-4 lg:space-x-5">
               {/* Search Trigger Button */}
               <button
                 type="button"
@@ -202,7 +202,7 @@ export const Navbar: React.FC = () => {
             </div>
 
             {/* Mobile Actions */}
-            <div className="flex items-center space-x-3 sm:hidden">
+            <div className="flex items-center space-x-3 md:hidden">
               <button
                 type="button"
                 onClick={() => setSearchOpen(true)}
@@ -240,7 +240,7 @@ export const Navbar: React.FC = () => {
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="fixed inset-0 top-[65px] z-50 bg-[#141312]/98 backdrop-blur-xl flex flex-col justify-between px-6 py-8 overflow-y-auto sm:hidden border-t border-white/10 text-left">
+          <div className="fixed inset-0 top-[65px] z-50 bg-[#141312]/98 backdrop-blur-xl flex flex-col justify-between px-6 py-8 overflow-y-auto md:hidden border-t border-white/10 text-left">
             <div className="space-y-6">
               <p className="text-xs font-sans uppercase tracking-[0.2em] text-[#E05A2B] font-bold">
                 Menu Directory
@@ -315,9 +315,11 @@ export const Navbar: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setSearchOpen(false)}
-                className="px-2.5 py-1 text-xs text-neutral-400 hover:text-black font-semibold rounded-md border border-neutral-200"
+                className="p-1.5 sm:px-2.5 sm:py-1 text-xs text-neutral-400 hover:text-black font-semibold rounded-md border border-neutral-200 flex items-center justify-center transition-colors"
+                aria-label="Close search"
               >
-                ESC
+                <X className="w-4 h-4 sm:hidden" />
+                <span className="hidden sm:inline">ESC</span>
               </button>
             </div>
 

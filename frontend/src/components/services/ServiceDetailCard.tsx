@@ -13,7 +13,7 @@ export const ServiceDetailCard: React.FC<ServiceDetailCardProps> = ({ service, i
   const isReversed = index % 2 === 1;
 
   return (
-    <article className="group border border-[#E7E2D8] bg-[#FFFFFF] p-6 sm:p-10 lg:p-12 mb-12 shadow-sm text-left transition-all duration-500 hover:border-[#C5BBAF] hover:shadow-md">
+    <article className="group border border-[#E7E2D8] bg-[#FFFFFF] p-4 sm:p-10 lg:p-12 mb-8 sm:mb-12 shadow-sm text-left transition-all duration-500 hover:border-[#C5BBAF] hover:shadow-md">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
         {/* Visual Column */}
         <div className={`lg:col-span-5 ${isReversed ? 'lg:order-2' : 'lg:order-1'}`}>
@@ -75,8 +75,8 @@ export const ServiceDetailCard: React.FC<ServiceDetailCardProps> = ({ service, i
             <p className="text-xs font-sans text-[#757069]">
               <span className="font-medium text-[#181716]">Best suited for:</span> {service.idealFor}
             </p>
-            <Link to={`/consultation?service=${encodeURIComponent(service.title)}`}>
-              <Button variant="primary" size="sm" rightIcon={<ArrowRight className="w-3.5 h-3.5" />}>
+            <Link to={`/consultation?service=${encodeURIComponent(service.title)}`} className="w-full sm:w-auto">
+              <Button variant="primary" size="sm" className="w-full sm:w-auto justify-center" rightIcon={<ArrowRight className="w-3.5 h-3.5" />}>
                 Commission Service
               </Button>
             </Link>

@@ -53,7 +53,7 @@ export const WishlistDrawer: React.FC = () => {
             className="relative w-full max-w-md bg-white h-full shadow-2xl flex flex-col justify-between z-10 text-left"
           >
             {/* Drawer Header */}
-            <div className="p-6 border-b border-neutral-100 flex items-center justify-between">
+            <div className="p-4 sm:p-6 border-b border-neutral-100 flex items-center justify-between">
               <div className="flex items-center space-x-2.5">
                 <div className="w-8 h-8 rounded-full bg-neutral-100 flex items-center justify-center">
                   <ShoppingBag className="w-4 h-4 text-[#111111]" />
@@ -79,7 +79,7 @@ export const WishlistDrawer: React.FC = () => {
             </div>
 
             {/* Items List */}
-            <div className="flex-1 overflow-y-auto p-6 space-y-4">
+            <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4">
               {items.length === 0 ? (
                 <div className="h-full flex flex-col items-center justify-center text-center py-16 space-y-4">
                   <div className="w-16 h-16 rounded-full bg-neutral-100 flex items-center justify-center text-neutral-400">
@@ -142,7 +142,7 @@ export const WishlistDrawer: React.FC = () => {
 
             {/* Drawer Footer Actions */}
             {items.length > 0 && (
-              <div className="p-6 border-t border-neutral-100 bg-neutral-50/60 space-y-3">
+              <div className="p-4 sm:p-6 border-t border-neutral-100 bg-neutral-50/60 space-y-3">
                 <div className="flex items-center justify-between text-xs text-neutral-500 pb-2">
                   <span>Selected Pieces: <strong className="text-black">{totalCount}</strong></span>
                   <button

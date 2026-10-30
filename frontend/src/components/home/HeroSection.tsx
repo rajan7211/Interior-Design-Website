@@ -40,12 +40,12 @@ export const HeroSection: React.FC = () => {
           </motion.p>
 
           {/* Huge Display Headline with Inline Photo Badge */}
-          <h1 className="font-sans font-extrabold text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] text-white leading-[1.05] tracking-tight">
+          <h1 className="font-sans font-extrabold text-3xl sm:text-5xl md:text-7xl lg:text-[5.25rem] text-white leading-[1.08] sm:leading-[1.05] tracking-tight">
             <motion.span
               initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.85, delay: 0.28, ease: LUXURY_EASE }}
-              className="inline-flex items-center flex-wrap gap-x-3 gap-y-1"
+              className="inline-flex items-center flex-wrap gap-x-2 sm:gap-x-3 gap-y-1"
             >
               <span>Beautiful</span>
               {/* Inline Photo Badge (Smooth spring reveal) */}
@@ -53,7 +53,7 @@ export const HeroSection: React.FC = () => {
                 initial={{ scale: 0.5, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.65, delay: 0.45, ease: SPRING_EASE }}
-                className="inline-block w-14 sm:w-20 md:w-24 h-9 sm:h-12 md:h-14 rounded-lg overflow-hidden border-2 border-white/80 shadow-md align-middle -translate-y-1"
+                className="inline-block w-12 sm:w-20 md:w-24 h-7 sm:h-12 md:h-14 rounded-lg overflow-hidden border sm:border-2 border-white/80 shadow-md align-middle -translate-y-0.5 sm:-translate-y-1"
               >
                 <img
                   src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=300&q=80"

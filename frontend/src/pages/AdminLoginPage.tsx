@@ -34,7 +34,7 @@ export const AdminLoginPage: React.FC = () => {
   return (
     <Layout showFooter={false}>
       <div className="min-h-[85vh] w-full flex items-center justify-center p-4 sm:p-6 bg-[#FBF9F5]">
-        <div className="w-full max-w-md bg-[#FFFFFF] border border-[#E7E2D8] p-8 sm:p-10 shadow-sm text-left">
+        <div className="w-full max-w-md bg-[#FFFFFF] border border-[#E7E2D8] p-5 sm:p-10 shadow-sm text-left">
           <div className="flex items-center justify-between pb-6 border-b border-[#E7E2D8] mb-6">
             <div>
               <span className="text-[10px] uppercase font-sans tracking-[0.25em] text-[#E05A2B] font-bold block">

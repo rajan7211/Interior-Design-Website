@@ -58,7 +58,7 @@ export const NewsletterBannerSection: React.FC = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter Your Email"
-                className="w-full bg-transparent text-xs text-black placeholder:text-neutral-400 outline-none font-medium"
+                className="w-full bg-transparent text-base sm:text-xs text-black placeholder:text-neutral-400 outline-none font-medium px-1"
               />
               <button
                 type="submit"

@@ -37,7 +37,7 @@ export const Footer: React.FC = () => {
             </div>
 
             {/* 3 Nav Columns: Quick Links, Support, Company */}
-            <div className="grid grid-cols-3 gap-6 pt-5 border-t border-neutral-800/80 text-xs font-sans">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-5 border-t border-neutral-800/80 text-xs font-sans">
               <div>
                 <p className="font-bold text-white mb-3 tracking-wide">
                   Quick Links
@@ -126,10 +126,10 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar: Copyright & Legal */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs font-sans text-neutral-500 gap-3">
-          <p>
+          <p className="text-center sm:text-left">
             © {new Date().getFullYear()} Aurellé. All rights reserved.
           </p>
-          <div className="flex items-center space-x-6">
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-6 gap-y-2">
             <Link to="/admin/dashboard" className="flex items-center hover:text-white transition-colors">
               <Shield className="w-3.5 h-3.5 mr-1 text-[#E05A2B]" />
               <span>Admin Portal</span>

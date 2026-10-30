@@ -122,7 +122,7 @@ export const ExploreCollectionSection: React.FC = () => {
           {/* Right Column: Synchronized High-Resolution Showcase */}
           <div className="lg:col-span-7">
             <FadeIn direction="up" delay={0.2}>
-              <div className="aspect-[16/11] lg:aspect-[4/3] rounded-3xl overflow-hidden bg-neutral-900 shadow-2xl relative">
+              <div className="aspect-[4/3] sm:aspect-[16/11] lg:aspect-[4/3] rounded-3xl overflow-hidden bg-neutral-900 shadow-2xl relative">
                 {/* Crossfading Dynamic Image */}
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -144,9 +144,9 @@ export const ExploreCollectionSection: React.FC = () => {
                 </AnimatePresence>
 
                 {/* Overlaid Editorial Category Details at Bottom */}
-                <div className="absolute bottom-6 sm:bottom-8 left-6 sm:left-8 right-6 sm:right-8 z-10 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-                  <div className="space-y-1.5 text-left text-white max-w-md">
-                    <h3 className="font-sans font-extrabold text-2xl sm:text-3xl text-white tracking-tight drop-shadow-md">
+                <div className="absolute bottom-4 sm:bottom-8 left-4 sm:left-8 right-4 sm:right-8 z-10 flex flex-col sm:flex-row sm:items-end justify-between gap-3 sm:gap-4">
+                  <div className="space-y-1 sm:space-y-1.5 text-left text-white max-w-md">
+                    <h3 className="font-sans font-extrabold text-xl sm:text-3xl text-white tracking-tight drop-shadow-md">
                       {activeCategory.name}
                     </h3>
                     <p className="text-xs sm:text-sm text-neutral-200/95 leading-relaxed drop-shadow-sm font-sans line-clamp-2">
@@ -156,7 +156,7 @@ export const ExploreCollectionSection: React.FC = () => {
 
                   <Link
                     to={`/furniture?category=${encodeURIComponent(activeCategory.slug)}`}
-                    className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-full bg-white text-black hover:bg-[#E05A2B] hover:text-white transition-all text-xs font-bold uppercase tracking-wider shadow-lg flex-shrink-0"
+                    className="inline-flex items-center justify-center space-x-2 px-5 py-2.5 rounded-full bg-white text-black hover:bg-[#E05A2B] hover:text-white transition-all text-xs font-bold uppercase tracking-wider shadow-lg flex-shrink-0 w-full sm:w-auto"
                   >
                     <span>View Collection</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />

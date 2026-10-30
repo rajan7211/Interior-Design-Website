@@ -98,7 +98,7 @@ export const ProductPlacementSection: React.FC = () => {
                     )}
                   </button>
 
-                  {/* Floating Product Detail Popover Card */}
+                  {/* Floating Product Detail Popover Card (Tablet & Desktop) */}
                   <AnimatePresence>
                     {isActive && (
                       <motion.div
@@ -107,7 +107,7 @@ export const ProductPlacementSection: React.FC = () => {
                         exit={{ opacity: 0, scale: 0.95 }}
                         transition={{ duration: 0.25, ease: 'easeOut' }}
                         onClick={(e) => e.stopPropagation()}
-                        className={`absolute z-40 w-72 sm:w-80 bg-neutral-950/95 backdrop-blur-xl border border-white/15 p-4 rounded-2xl shadow-2xl text-left ${
+                        className={`hidden sm:block absolute z-40 w-72 sm:w-80 bg-neutral-950/95 backdrop-blur-xl border border-white/15 p-4 rounded-2xl shadow-2xl text-left ${
                           isRightSide ? 'right-full mr-3.5' : 'left-full ml-3.5'
                         } ${
                           isBottomSide ? 'bottom-0' : 'top-0'
@@ -172,6 +172,75 @@ export const ProductPlacementSection: React.FC = () => {
                 </div>
               );
             })}
+
+            {/* Mobile Anchored Popover Card (Contained within frame on phones) */}
+            <AnimatePresence>
+              {activeHotspot && (
+                <motion.div
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 16 }}
+                  transition={{ duration: 0.25, ease: 'easeOut' }}
+                  onClick={(e) => e.stopPropagation()}
+                  className="sm:hidden absolute inset-x-3 bottom-3 z-40 bg-neutral-950/95 backdrop-blur-xl border border-white/15 p-3.5 rounded-2xl shadow-2xl text-left"
+                >
+                  <div className="flex items-start justify-between pb-2 mb-2 border-b border-white/10">
+                    <span className="text-[10px] font-sans uppercase font-bold tracking-widest text-[#E05A2B]">
+                      {activeHotspot.category || 'Featured Piece'}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => setActiveHotspot(null)}
+                      className="text-white/60 hover:text-white p-1"
+                      aria-label="Close"
+                    >
+                      <X className="w-4 h-4" />
+                    </button>
+                  </div>
+
+                  <div className="flex items-center space-x-3">
+                    {activeHotspot.image && (
+                      <div className="w-14 h-14 rounded-xl overflow-hidden bg-neutral-800 flex-shrink-0">
+                        <img
+                          src={activeHotspot.image}
+                          alt={activeHotspot.title}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    )}
+
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-sans font-bold text-sm text-white truncate">
+                        {activeHotspot.title}
+                      </h4>
+                      <p className="text-[11px] font-sans text-neutral-400 truncate">
+                        {activeHotspot.subtitle}
+                      </p>
+                      <div className="text-xs font-sans font-extrabold text-[#E05A2B] mt-0.5">
+                        {activeHotspot.price}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-3 pt-2.5 border-t border-white/10 flex items-center justify-between">
+                    <Link
+                      to={`/furniture?category=${activeHotspot.productSlug || 'living'}`}
+                      className="text-[11px] font-sans text-white/70 hover:text-white underline underline-offset-2"
+                    >
+                      Explore in Catalog
+                    </Link>
+
+                    <Link
+                      to={`/consultation?service=Custom+Furniture&item=${encodeURIComponent(activeHotspot.title)}`}
+                      className="inline-flex items-center space-x-1 px-3 py-1.5 rounded-full bg-[#E05A2B] text-white hover:bg-[#C94A1F] text-[10px] font-bold uppercase tracking-wider transition-all"
+                    >
+                      <span>Order Now</span>
+                      <ArrowUpRight className="w-3 h-3" />
+                    </Link>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </FadeIn>
       </div>

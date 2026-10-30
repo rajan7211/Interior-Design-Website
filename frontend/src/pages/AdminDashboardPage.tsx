@@ -166,11 +166,11 @@ export const AdminDashboardPage: React.FC = () => {
 
           {/* Navigation Tabs Bar */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-[#E7E2D8] mb-8 gap-4">
-            <div className="flex items-center space-x-2 sm:space-x-6 overflow-x-auto pb-1 scrollbar-none">
+            <div className="flex items-center space-x-2 sm:space-x-6 overflow-x-auto pb-1 scrollbar-none w-full sm:w-auto">
               <button
                 type="button"
                 onClick={() => setActiveTab('projects')}
-                className={`py-3 text-xs uppercase font-sans tracking-[0.18em] transition-colors border-b-2 flex items-center space-x-2 ${
+                className={`py-3 text-xs uppercase font-sans tracking-[0.18em] transition-colors border-b-2 flex items-center space-x-2 whitespace-nowrap flex-shrink-0 ${
                   activeTab === 'projects'
                     ? 'border-[#181716] text-[#181716] font-semibold'
                     : 'border-transparent text-[#757069] hover:text-[#181716]'
@@ -183,7 +183,7 @@ export const AdminDashboardPage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setActiveTab('inquiries')}
-                className={`py-3 text-xs uppercase font-sans tracking-[0.18em] transition-colors border-b-2 flex items-center space-x-2 ${
+                className={`py-3 text-xs uppercase font-sans tracking-[0.18em] transition-colors border-b-2 flex items-center space-x-2 whitespace-nowrap flex-shrink-0 ${
                   activeTab === 'inquiries'
                     ? 'border-[#181716] text-[#181716] font-semibold'
                     : 'border-transparent text-[#757069] hover:text-[#181716]'
@@ -196,7 +196,7 @@ export const AdminDashboardPage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setActiveTab('appointments')}
-                className={`py-3 text-xs uppercase font-sans tracking-[0.18em] transition-colors border-b-2 flex items-center space-x-2 ${
+                className={`py-3 text-xs uppercase font-sans tracking-[0.18em] transition-colors border-b-2 flex items-center space-x-2 whitespace-nowrap flex-shrink-0 ${
                   activeTab === 'appointments'
                     ? 'border-[#181716] text-[#181716] font-semibold'
                     : 'border-transparent text-[#757069] hover:text-[#181716]'
@@ -209,7 +209,7 @@ export const AdminDashboardPage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setActiveTab('services')}
-                className={`py-3 text-xs uppercase font-sans tracking-[0.18em] transition-colors border-b-2 flex items-center space-x-2 ${
+                className={`py-3 text-xs uppercase font-sans tracking-[0.18em] transition-colors border-b-2 flex items-center space-x-2 whitespace-nowrap flex-shrink-0 ${
                   activeTab === 'services'
                     ? 'border-[#181716] text-[#181716] font-semibold'
                     : 'border-transparent text-[#757069] hover:text-[#181716]'

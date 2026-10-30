@@ -51,7 +51,7 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ projects }) 
                 >
                   <Link
                     to={`/projects/${project.slug}`}
-                    className="block group overflow-hidden bg-[#E2DBD0] aspect-[16/10] relative shadow-sm"
+                    className="block group overflow-hidden bg-[#E2DBD0] aspect-[4/3] sm:aspect-[16/10] relative shadow-sm"
                   >
                     <img
                       src={project.coverImage}

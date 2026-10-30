@@ -71,8 +71,9 @@ export const FeaturedCollectionSection: React.FC = () => {
                     <button
                       type="button"
                       onClick={(e) => handleAddAndOpen(prod, e)}
-                      className="absolute bottom-2.5 right-2.5 p-2 rounded-full bg-black text-white hover:bg-[#E05A2B] opacity-0 group-hover:opacity-100 transition-all shadow-md"
+                      className="absolute bottom-2.5 right-2.5 p-2.5 sm:p-2 rounded-full bg-black text-white hover:bg-[#E05A2B] opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-all shadow-md"
                       title="Add to Inquiry Bag"
+                      aria-label={`Add ${prod.title} to Inquiry Bag`}
                     >
                       <ShoppingBag className="w-3.5 h-3.5" />
                     </button>

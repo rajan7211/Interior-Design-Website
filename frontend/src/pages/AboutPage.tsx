@@ -27,15 +27,15 @@ export const AboutPage: React.FC = () => {
 
           {/* Large Studio Visual with Floating Manifesto */}
           <FadeIn direction="up" delay={0.1}>
-            <div className="relative w-full aspect-[16/9] lg:aspect-[21/9] bg-[#EAE4D7] overflow-hidden mb-16 sm:mb-24 shadow-sm group">
+            <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] bg-[#EAE4D7] overflow-hidden mb-16 sm:mb-24 shadow-sm group">
               <img
                 src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=2000&q=80"
                 alt="AURELLE Interiors Studio Atelier"
                 className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
-              <div className="absolute bottom-6 sm:bottom-10 left-6 sm:left-10 max-w-xl text-left text-[#FBF9F5]">
-                <p className="font-serif text-xl sm:text-2xl lg:text-3xl font-light italic leading-snug">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent pointer-events-none" />
+              <div className="absolute bottom-4 sm:bottom-10 left-4 sm:left-10 right-4 sm:right-auto max-w-xl text-left text-[#FBF9F5]">
+                <p className="font-serif text-lg sm:text-2xl lg:text-3xl font-light italic leading-snug">
                   "We do not decorate rooms. We sculpt the voids where life unfolds with quiet dignity."
                 </p>
                 <p className="text-[10px] sm:text-xs uppercase font-sans tracking-[0.2em] text-[#C5A880] mt-2">

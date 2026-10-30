@@ -56,7 +56,7 @@ export const Modal: React.FC<ModalProps> = ({
       <div 
         role="dialog" 
         aria-modal="true"
-        className={`relative w-full ${maxWidthClasses[maxWidth]} bg-[#FBF9F5] border border-[#E7E2D8] shadow-2xl p-6 sm:p-8 md:p-10 z-10 my-auto text-left`}
+        className={`relative w-full ${maxWidthClasses[maxWidth]} bg-[#FBF9F5] border border-[#E7E2D8] shadow-2xl p-5 sm:p-8 md:p-10 z-10 my-auto text-left`}
       >
         <div className="flex items-start justify-between border-b border-[#E7E2D8] pb-4 mb-6">
           <div>

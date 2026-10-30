@@ -104,7 +104,7 @@ export const ContactPage: React.FC = () => {
             {/* Left: Contact Form */}
             <div className="lg:col-span-7">
               <FadeIn direction="up" delay={0.1}>
-                <div className="bg-[#FFFFFF] border border-[#E7E2D8] p-6 sm:p-10 shadow-sm text-left">
+                <div className="bg-[#FFFFFF] border border-[#E7E2D8] p-5 sm:p-10 shadow-sm text-left">
                 {submittedInquiryId ? (
                   <div className="py-12 px-4 text-center space-y-5">
                     <div className="inline-flex items-center justify-center w-14 h-14 bg-[#FDF0EB] text-[#E05A2B] rounded-full mx-auto">
@@ -213,7 +213,7 @@ export const ContactPage: React.FC = () => {
                         type="submit"
                         variant="primary"
                         size="lg"
-                        className="w-full sm:w-auto"
+                        className="w-full sm:w-auto justify-center"
                         isLoading={isSubmitting}
                         rightIcon={<ArrowRight className="w-4 h-4" />}
                       >
@@ -229,7 +229,7 @@ export const ContactPage: React.FC = () => {
             {/* Right: Studio Directory & Office Information */}
             <div className="lg:col-span-5">
               <FadeIn direction="up" delay={0.2} className="space-y-8 text-left">
-                <div className="bg-[#F2EDE4] border border-[#E4DCD0] p-6 sm:p-8 space-y-6">
+                <div className="bg-[#F2EDE4] border border-[#E4DCD0] p-5 sm:p-8 space-y-6">
                   <div>
                     <span className="text-[10px] uppercase font-sans tracking-[0.25em] text-[#E05A2B] font-bold block">
                       Direct Contact

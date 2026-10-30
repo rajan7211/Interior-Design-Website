@@ -422,11 +422,11 @@ export const FurniturePage: React.FC = () => {
           onClick={() => setSelectedProduct(null)}
         >
           <div
-            className="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl relative text-left"
+            className="bg-white rounded-3xl max-w-2xl w-full max-h-[92vh] overflow-y-auto shadow-2xl relative text-left"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="grid grid-cols-1 md:grid-cols-2">
-              <div className="aspect-[4/3] md:aspect-auto h-full bg-neutral-100 relative min-h-[260px]">
+              <div className="aspect-[16/10] md:aspect-auto h-full bg-neutral-100 relative min-h-[200px] md:min-h-[260px]">
                 <img
                   src={selectedProduct.image}
                   alt={selectedProduct.title}
@@ -437,7 +437,7 @@ export const FurniturePage: React.FC = () => {
                 />
               </div>
 
-              <div className="p-6 sm:p-8 flex flex-col justify-between space-y-6">
+              <div className="p-5 sm:p-8 flex flex-col justify-between space-y-5 sm:space-y-6">
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-sans uppercase font-bold tracking-widest text-[#E05A2B]">

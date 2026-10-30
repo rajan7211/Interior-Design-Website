@@ -214,13 +214,16 @@ export const ConsultationPage: React.FC = () => {
                       <div className="mb-8 pb-6 border-b border-neutral-100">
                         <div className="flex items-center justify-between mb-3 text-xs font-sans font-bold uppercase tracking-wider">
                           <span className={step >= 1 ? 'text-[#E05A2B]' : 'text-neutral-400'}>
-                            1. Scope & Disciplines
+                            <span className="hidden sm:inline">1. Scope & Disciplines</span>
+                            <span className="sm:hidden">1. Scope</span>
                           </span>
                           <span className={step >= 2 ? 'text-[#E05A2B]' : 'text-neutral-400'}>
-                            2. Schedule & Vision
+                            <span className="hidden sm:inline">2. Schedule & Vision</span>
+                            <span className="sm:hidden">2. Schedule</span>
                           </span>
                           <span className={step >= 3 ? 'text-[#E05A2B]' : 'text-neutral-400'}>
-                            3. Contact & Confirm
+                            <span className="hidden sm:inline">3. Contact & Confirm</span>
+                            <span className="sm:hidden">3. Contact</span>
                           </span>
                         </div>
                         {/* Progress Indicator Bar */}
@@ -292,7 +295,7 @@ export const ConsultationPage: React.FC = () => {
                               <button
                                 type="button"
                                 onClick={handleNextStep}
-                                className="inline-flex items-center space-x-2 px-6 py-3 rounded-full bg-[#111111] text-white hover:bg-[#E05A2B] text-xs font-bold uppercase tracking-wider transition-all shadow-md group"
+                                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-6 py-3.5 sm:py-3 rounded-full bg-[#111111] text-white hover:bg-[#E05A2B] text-xs font-bold uppercase tracking-wider transition-all shadow-md group"
                               >
                                 <span>Next: Schedule & Vision</span>
                                 <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
@@ -346,11 +349,11 @@ export const ConsultationPage: React.FC = () => {
                               {...register('notesAndVision')}
                             />
 
-                            <div className="pt-4 flex items-center justify-between">
+                            <div className="pt-4 flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-between gap-3">
                               <button
                                 type="button"
                                 onClick={() => setStep(1)}
-                                className="inline-flex items-center space-x-1 text-xs font-bold font-sans uppercase text-neutral-500 hover:text-black py-2.5 px-4"
+                                className="inline-flex items-center justify-center space-x-1 text-xs font-bold font-sans uppercase text-neutral-500 hover:text-black py-2.5 px-4"
                               >
                                 <ArrowLeft className="w-3.5 h-3.5 mr-1" />
                                 <span>Back</span>
@@ -359,7 +362,7 @@ export const ConsultationPage: React.FC = () => {
                               <button
                                 type="button"
                                 onClick={handleNextStep}
-                                className="inline-flex items-center space-x-2 px-6 py-3 rounded-full bg-[#111111] text-white hover:bg-[#E05A2B] text-xs font-bold uppercase tracking-wider transition-all shadow-md group"
+                                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-6 py-3.5 sm:py-3 rounded-full bg-[#111111] text-white hover:bg-[#E05A2B] text-xs font-bold uppercase tracking-wider transition-all shadow-md group"
                               >
                                 <span>Next: Contact Details</span>
                                 <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
@@ -439,11 +442,11 @@ export const ConsultationPage: React.FC = () => {
                               />
                             </div>
 
-                            <div className="pt-4 flex items-center justify-between">
+                            <div className="pt-4 flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-between gap-3">
                               <button
                                 type="button"
                                 onClick={() => setStep(2)}
-                                className="inline-flex items-center space-x-1 text-xs font-bold font-sans uppercase text-neutral-500 hover:text-black py-2.5 px-4"
+                                className="inline-flex items-center justify-center space-x-1 text-xs font-bold font-sans uppercase text-neutral-500 hover:text-black py-2.5 px-4"
                               >
                                 <ArrowLeft className="w-3.5 h-3.5 mr-1" />
                                 <span>Back</span>
@@ -453,7 +456,7 @@ export const ConsultationPage: React.FC = () => {
                                 type="submit"
                                 variant="primary"
                                 size="lg"
-                                className="bg-[#E05A2B] hover:bg-[#C94A1F] text-white shadow-md font-sans font-bold uppercase tracking-wider text-xs"
+                                className="w-full sm:w-auto bg-[#E05A2B] hover:bg-[#C94A1F] text-white shadow-md font-sans font-bold uppercase tracking-wider text-xs justify-center"
                                 isLoading={isSubmitting}
                                 rightIcon={<Check className="w-4 h-4" />}
                               >

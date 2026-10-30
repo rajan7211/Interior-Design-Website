@@ -32,7 +32,7 @@ export const DribbbleTestimonialSection: React.FC = () => {
     <section className="w-full bg-[#FAF8F5] py-14 sm:py-20 overflow-hidden text-left">
       <div className="max-w-[1680px] mx-auto px-4 sm:px-8 lg:px-12">
         <FadeIn direction="up">
-          <div className="bg-white rounded-3xl p-6 sm:p-10 lg:p-12 border border-neutral-100 shadow-xl">
+          <div className="bg-white rounded-3xl p-5 sm:p-10 lg:p-12 border border-neutral-100 shadow-xl">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
               {/* Left Column: Interior Photo with Smooth Crossfade */}
               <div className="lg:col-span-6">

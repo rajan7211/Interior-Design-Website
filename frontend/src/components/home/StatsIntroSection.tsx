@@ -13,10 +13,10 @@ export const StatsIntroSection: React.FC = () => {
             <h2 className="font-sans font-extrabold text-3xl sm:text-4xl md:text-5xl text-[#111111] max-w-2xl leading-[1.15] tracking-tight">
               Timeless Elegance Crafted For Modern Living And Everyday Comfort
             </h2>
-            <Link to="/about" className="flex-shrink-0 group">
+            <Link to="/about" className="flex-shrink-0 group w-full sm:w-auto">
               <button
                 type="button"
-                className="inline-flex items-center px-6 py-3.5 rounded-full bg-black text-white hover:bg-neutral-800 text-xs font-bold uppercase tracking-wider transition-all space-x-2 shadow-sm"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-black text-white hover:bg-neutral-800 text-xs font-bold uppercase tracking-wider transition-all space-x-2 shadow-sm"
               >
                 <span>More About Us</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
@@ -47,26 +47,26 @@ export const StatsIntroSection: React.FC = () => {
             <FadeInStagger staggerDelay={0.15}>
               <div className="grid grid-cols-3 gap-4 pb-6 border-b border-neutral-100">
                 <FadeInStaggerItem>
-                  <p className="font-sans font-extrabold text-3xl sm:text-4xl text-[#111111]">
+                  <p className="font-sans font-extrabold text-2xl sm:text-4xl text-[#111111]">
                     <AnimatedCounter value={80} prefix="$" suffix="M+" duration={1.8} />
                   </p>
-                  <p className="text-xs text-neutral-500 font-sans mt-1">
+                  <p className="text-[11px] sm:text-xs text-neutral-500 font-sans mt-1">
                     Revenue Generated
                   </p>
                 </FadeInStaggerItem>
                 <FadeInStaggerItem>
-                  <p className="font-sans font-extrabold text-3xl sm:text-4xl text-[#111111]">
+                  <p className="font-sans font-extrabold text-2xl sm:text-4xl text-[#111111]">
                     <AnimatedCounter value={20} suffix="K+" duration={1.8} />
                   </p>
-                  <p className="text-xs text-neutral-500 font-sans mt-1">
+                  <p className="text-[11px] sm:text-xs text-neutral-500 font-sans mt-1">
                     Happy Customers
                   </p>
                 </FadeInStaggerItem>
                 <FadeInStaggerItem>
-                  <p className="font-sans font-extrabold text-3xl sm:text-4xl text-[#111111]">
+                  <p className="font-sans font-extrabold text-2xl sm:text-4xl text-[#111111]">
                     <AnimatedCounter value={98} suffix="%" duration={1.8} />
                   </p>
-                  <p className="text-xs text-neutral-500 font-sans mt-1">
+                  <p className="text-[11px] sm:text-xs text-neutral-500 font-sans mt-1">
                     Client Satisfaction
                   </p>
                 </FadeInStaggerItem>
