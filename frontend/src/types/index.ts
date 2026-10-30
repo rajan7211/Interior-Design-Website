@@ -163,4 +163,6 @@ export interface Hotspot {
   x: number; // percentage from left
   y: number; // percentage from top
   image?: string;
+  category?: string;
+  productSlug?: string;
 }

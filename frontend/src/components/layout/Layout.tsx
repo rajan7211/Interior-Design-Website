@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
+import { WishlistDrawer } from './WishlistDrawer';
 
 const ScrollToTop: React.FC = () => {
   const { pathname } = useLocation();
@@ -37,6 +38,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, showFooter = true }) =
         {children}
       </motion.main>
       {showFooter && <Footer />}
+      <WishlistDrawer />
     </div>
   );
 };

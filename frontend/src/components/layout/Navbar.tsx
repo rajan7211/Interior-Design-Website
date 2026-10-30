@@ -1,12 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Search, ShoppingBag, Menu, X, ArrowUpRight } from 'lucide-react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Search, ShoppingBag, Menu, X, ArrowUpRight, Sparkles, Layers, Compass, ArrowRight } from 'lucide-react';
+import { useWishlist } from '../../context/WishlistContext';
+import { FURNITURE_CATALOG, INITIAL_PROJECTS, STUDIO_SERVICES } from '../../data/mockData';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [activeSearchTab, setActiveSearchTab] = useState<'all' | 'furniture' | 'projects' | 'services'>('all');
+  const searchInputRef = useRef<HTMLInputElement>(null);
+
   const location = useLocation();
+  const navigate = useNavigate();
+  const { totalCount, setIsOpen: setWishlistOpen } = useWishlist();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,7 +26,32 @@ export const Navbar: React.FC = () => {
 
   useEffect(() => {
     setMobileMenuOpen(false);
+    setSearchOpen(false);
   }, [location.pathname, location.search]);
+
+  // Handle ESC key for search modal & auto focus
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSearchOpen(false);
+      // Optional: Cmd/Ctrl + K shortcut to open search
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setSearchOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    if (searchOpen) {
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => searchInputRef.current?.focus(), 50);
+    } else {
+      document.body.style.overflow = '';
+      setSearchQuery('');
+    }
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [searchOpen]);
 
   const navLinks = [
     { label: 'Home', path: '/' },
@@ -27,6 +60,43 @@ export const Navbar: React.FC = () => {
     { label: 'Services', path: '/services' },
     { label: 'Contact', path: '/contact' },
   ];
+
+  // Live filtered search results
+  const searchResults = useMemo(() => {
+    const q = searchQuery.trim().toLowerCase();
+    if (!q) {
+      return { furniture: [], projects: [], services: [], total: 0 };
+    }
+
+    const furniture = FURNITURE_CATALOG.filter(
+      (f) =>
+        f.title.toLowerCase().includes(q) ||
+        f.category.toLowerCase().includes(q) ||
+        (f.materials && f.materials.toLowerCase().includes(q)) ||
+        (f.description && f.description.toLowerCase().includes(q))
+    ).slice(0, 6);
+
+    const projects = INITIAL_PROJECTS.filter(
+      (p) =>
+        p.title.toLowerCase().includes(q) ||
+        p.location.toLowerCase().includes(q) ||
+        p.category.toLowerCase().includes(q) ||
+        p.subtitle.toLowerCase().includes(q)
+    ).slice(0, 4);
+
+    const services = STUDIO_SERVICES.filter(
+      (s) =>
+        s.title.toLowerCase().includes(q) ||
+        s.tagline.toLowerCase().includes(q)
+    ).slice(0, 3);
+
+    return {
+      furniture,
+      projects,
+      services,
+      total: furniture.length + projects.length + services.length,
+    };
+  }, [searchQuery]);
 
   return (
     <>
@@ -79,36 +149,44 @@ export const Navbar: React.FC = () => {
 
             {/* Right Action Icons & Login Pill */}
             <div className="hidden sm:flex items-center space-x-4 lg:space-x-5">
-              {/* Search Icon */}
+              {/* Search Trigger Button */}
               <button
                 type="button"
                 onClick={() => setSearchOpen(true)}
-                className="p-1.5 text-white/90 hover:text-white transition-colors"
+                className="p-1.5 text-white/90 hover:text-white transition-colors relative flex items-center space-x-1"
                 aria-label="Search Collection"
+                title="Search Collection (Ctrl+K)"
               >
                 <Search className="w-4 h-4" />
+                <span className="hidden xl:inline text-[10px] text-white/40 border border-white/20 rounded px-1.5 py-0.5 ml-1">
+                  ⌘K
+                </span>
               </button>
 
-              {/* Shopping Bag Icon with Count */}
-              <Link
-                to="/consultation"
+              {/* Shopping Bag Trigger Button with Live Count */}
+              <button
+                type="button"
+                onClick={() => setWishlistOpen(true)}
                 className="relative p-1.5 text-white/90 hover:text-white transition-colors"
                 aria-label="Inquiry Bag"
+                title="View Inquiry Bag"
               >
                 <ShoppingBag className="w-4 h-4" />
-                <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-[#E05A2B] text-white text-[9px] font-bold flex items-center justify-center">
-                  2
-                </span>
-              </Link>
+                {totalCount > 0 && (
+                  <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-[#E05A2B] text-white text-[9px] font-bold flex items-center justify-center shadow-md animate-in fade-in zoom-in">
+                    {totalCount}
+                  </span>
+                )}
+              </button>
 
               <span className="text-white/30 text-xs">|</span>
 
-              {/* Sign Up / Consultation */}
+              {/* Consultation Link */}
               <Link
                 to="/consultation"
                 className="text-xs font-sans text-white/90 hover:text-white transition-colors"
               >
-                Sign Up
+                Consultation
               </Link>
 
               {/* White Pill Button: Login / Admin */}
@@ -124,12 +202,29 @@ export const Navbar: React.FC = () => {
 
             {/* Mobile Actions */}
             <div className="flex items-center space-x-3 sm:hidden">
-              <Link to="/consultation" className="p-1.5 text-white relative">
+              <button
+                type="button"
+                onClick={() => setSearchOpen(true)}
+                className="p-1.5 text-white"
+                aria-label="Search"
+              >
+                <Search className="w-4 h-4" />
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setWishlistOpen(true)}
+                className="p-1.5 text-white relative"
+                aria-label="Inquiry Bag"
+              >
                 <ShoppingBag className="w-5 h-5" />
-                <span className="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-[#E05A2B] text-white text-[8px] font-bold flex items-center justify-center">
-                  2
-                </span>
-              </Link>
+                {totalCount > 0 && (
+                  <span className="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-[#E05A2B] text-white text-[8px] font-bold flex items-center justify-center">
+                    {totalCount}
+                  </span>
+                )}
+              </button>
+
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -185,40 +280,286 @@ export const Navbar: React.FC = () => {
         )}
       </header>
 
-      {/* Quick Search Modal */}
+      {/* Live Global Search Modal */}
       {searchOpen && (
-        <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-[#FFFFFF] text-black w-full max-w-lg p-6 rounded-2xl shadow-2xl relative text-left">
-            <div className="flex items-center justify-between pb-3 border-b border-gray-100 mb-4">
-              <span className="text-xs uppercase font-bold tracking-wider text-gray-500">
-                Search Decor & Projects
-              </span>
+        <div 
+          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-start justify-center p-4 pt-16 sm:pt-24"
+          onClick={() => setSearchOpen(false)}
+        >
+          <div 
+            className="bg-white text-black w-full max-w-2xl rounded-3xl shadow-2xl overflow-hidden relative text-left border border-neutral-200 animate-in fade-in zoom-in-95 duration-200"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Search Input Header */}
+            <div className="p-4 sm:p-6 border-b border-neutral-100 flex items-center space-x-3.5">
+              <Search className="w-5 h-5 text-[#E05A2B] flex-shrink-0" />
+              <input
+                ref={searchInputRef}
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search furniture, architecture, materials, lighting..."
+                className="w-full text-base sm:text-lg font-sans outline-none placeholder:text-neutral-400 bg-transparent"
+              />
+              {searchQuery && (
+                <button
+                  type="button"
+                  onClick={() => setSearchQuery('')}
+                  className="p-1 text-neutral-400 hover:text-black"
+                  aria-label="Clear search"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              )}
               <button
+                type="button"
                 onClick={() => setSearchOpen(false)}
-                className="p-1 text-gray-400 hover:text-black"
+                className="px-2.5 py-1 text-xs text-neutral-400 hover:text-black font-semibold rounded-md border border-neutral-200"
               >
-                <X className="w-5 h-5" />
+                ESC
               </button>
             </div>
-            <div className="relative">
-              <Search className="w-4 h-4 absolute left-3 top-3.5 text-gray-400" />
-              <input
-                type="text"
-                autoFocus
-                placeholder="Search sofas, lighting, spatial design, penthouses..."
-                className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm outline-none focus:border-black"
-              />
+
+            {/* Results Filter Tabs if query present */}
+            {searchQuery && searchResults.total > 0 && (
+              <div className="px-6 py-2.5 bg-neutral-50/70 border-b border-neutral-100 flex items-center space-x-2 text-xs font-sans overflow-x-auto">
+                <button
+                  type="button"
+                  onClick={() => setActiveSearchTab('all')}
+                  className={`px-3 py-1 rounded-full font-bold transition-all ${
+                    activeSearchTab === 'all'
+                      ? 'bg-[#111111] text-white'
+                      : 'text-neutral-500 hover:text-black'
+                  }`}
+                >
+                  All ({searchResults.total})
+                </button>
+                {searchResults.furniture.length > 0 && (
+                  <button
+                    type="button"
+                    onClick={() => setActiveSearchTab('furniture')}
+                    className={`px-3 py-1 rounded-full font-bold transition-all ${
+                      activeSearchTab === 'furniture'
+                        ? 'bg-[#111111] text-white'
+                        : 'text-neutral-500 hover:text-black'
+                    }`}
+                  >
+                    Furniture ({searchResults.furniture.length})
+                  </button>
+                )}
+                {searchResults.projects.length > 0 && (
+                  <button
+                    type="button"
+                    onClick={() => setActiveSearchTab('projects')}
+                    className={`px-3 py-1 rounded-full font-bold transition-all ${
+                      activeSearchTab === 'projects'
+                        ? 'bg-[#111111] text-white'
+                        : 'text-neutral-500 hover:text-black'
+                    }`}
+                  >
+                    Projects ({searchResults.projects.length})
+                  </button>
+                )}
+                {searchResults.services.length > 0 && (
+                  <button
+                    type="button"
+                    onClick={() => setActiveSearchTab('services')}
+                    className={`px-3 py-1 rounded-full font-bold transition-all ${
+                      activeSearchTab === 'services'
+                        ? 'bg-[#111111] text-white'
+                        : 'text-neutral-500 hover:text-black'
+                    }`}
+                  >
+                    Services ({searchResults.services.length})
+                  </button>
+                )}
+              </div>
+            )}
+
+            {/* Results Body */}
+            <div className="max-h-[60vh] overflow-y-auto p-4 sm:p-6 space-y-6">
+              {!searchQuery ? (
+                /* Empty state: show popular suggestions */
+                <div className="space-y-4">
+                  <div>
+                    <span className="text-[10px] font-sans uppercase font-bold tracking-widest text-neutral-400 block mb-2.5">
+                      Popular Searches
+                    </span>
+                    <div className="flex flex-wrap gap-2 text-xs font-sans">
+                      {['Bouclé Sofa', 'Travertine', 'Kensington', 'Dining Table', 'Full Interior Architecture', 'Penthouse', 'Lighting'].map((pill) => (
+                        <button
+                          key={pill}
+                          type="button"
+                          onClick={() => setSearchQuery(pill)}
+                          className="px-3.5 py-1.5 rounded-full bg-neutral-100 hover:bg-[#E05A2B] hover:text-white transition-all text-neutral-700 font-medium"
+                        >
+                          {pill}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="pt-4 border-t border-neutral-100">
+                    <span className="text-[10px] font-sans uppercase font-bold tracking-widest text-neutral-400 block mb-3">
+                      Featured Architectural Works
+                    </span>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      {INITIAL_PROJECTS.slice(0, 2).map((proj) => (
+                        <Link
+                          key={proj.id}
+                          to={`/projects/${proj.slug}`}
+                          onClick={() => setSearchOpen(false)}
+                          className="flex items-center space-x-3 p-2.5 rounded-2xl hover:bg-neutral-50 border border-neutral-100 transition-all group"
+                        >
+                          <img
+                            src={proj.coverImage}
+                            alt={proj.title}
+                            className="w-12 h-12 rounded-xl object-cover"
+                          />
+                          <div className="flex-1 min-w-0">
+                            <h4 className="font-sans font-bold text-xs text-[#111111] group-hover:text-[#E05A2B] truncate">
+                              {proj.title}
+                            </h4>
+                            <p className="text-[11px] text-neutral-400 truncate">
+                              {proj.location}
+                            </p>
+                          </div>
+                          <ArrowRight className="w-3.5 h-3.5 text-neutral-400 group-hover:text-[#E05A2B] flex-shrink-0" />
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : searchResults.total === 0 ? (
+                /* No Results Found */
+                <div className="py-12 text-center space-y-3">
+                  <div className="w-12 h-12 rounded-full bg-neutral-100 flex items-center justify-center mx-auto text-neutral-400">
+                    <Search className="w-5 h-5" />
+                  </div>
+                  <h4 className="font-sans font-bold text-base text-neutral-800">
+                    No results for "{searchQuery}"
+                  </h4>
+                  <p className="text-xs text-neutral-500 max-w-sm mx-auto">
+                    Try searching for furniture types (*sofa, chair, lamp*), architectural locations (*London, Paris, Zurich*), or design services.
+                  </p>
+                </div>
+              ) : (
+                /* Results List */
+                <div className="space-y-6">
+                  {/* Furniture Results */}
+                  {(activeSearchTab === 'all' || activeSearchTab === 'furniture') &&
+                    searchResults.furniture.length > 0 && (
+                      <div className="space-y-2.5">
+                        <span className="text-[10px] font-sans uppercase font-bold tracking-widest text-[#E05A2B] block">
+                          Furniture Collection ({searchResults.furniture.length})
+                        </span>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                          {searchResults.furniture.map((item) => (
+                            <Link
+                              key={item.id}
+                              to={`/furniture?category=${item.roomSlug || 'all'}`}
+                              onClick={() => setSearchOpen(false)}
+                              className="flex items-center space-x-3 p-2.5 rounded-2xl hover:bg-neutral-50 border border-neutral-100 transition-all group"
+                            >
+                              <img
+                                src={item.image}
+                                alt={item.title}
+                                className="w-12 h-12 rounded-xl object-cover"
+                              />
+                              <div className="flex-1 min-w-0">
+                                <h4 className="font-sans font-bold text-xs text-[#111111] group-hover:text-[#E05A2B] truncate">
+                                  {item.title}
+                                </h4>
+                                <span className="text-[11px] font-sans text-neutral-500 font-semibold block">
+                                  {item.price}
+                                </span>
+                              </div>
+                              <ArrowUpRight className="w-3.5 h-3.5 text-neutral-400 group-hover:text-[#E05A2B]" />
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                  {/* Projects Results */}
+                  {(activeSearchTab === 'all' || activeSearchTab === 'projects') &&
+                    searchResults.projects.length > 0 && (
+                      <div className="space-y-2.5">
+                        <span className="text-[10px] font-sans uppercase font-bold tracking-widest text-[#E05A2B] block">
+                          Architectural Monographs ({searchResults.projects.length})
+                        </span>
+                        <div className="space-y-2">
+                          {searchResults.projects.map((proj) => (
+                            <Link
+                              key={proj.id}
+                              to={`/projects/${proj.slug}`}
+                              onClick={() => setSearchOpen(false)}
+                              className="flex items-center justify-between p-3 rounded-2xl hover:bg-neutral-50 border border-neutral-100 transition-all group"
+                            >
+                              <div className="flex items-center space-x-3 min-w-0">
+                                <img
+                                  src={proj.coverImage}
+                                  alt={proj.title}
+                                  className="w-12 h-12 rounded-xl object-cover"
+                                />
+                                <div className="min-w-0">
+                                  <h4 className="font-sans font-bold text-xs text-[#111111] group-hover:text-[#E05A2B] truncate">
+                                    {proj.title}
+                                  </h4>
+                                  <p className="text-[11px] text-neutral-400 truncate">
+                                    {proj.location} • {proj.category}
+                                  </p>
+                                </div>
+                              </div>
+                              <ArrowUpRight className="w-4 h-4 text-neutral-400 group-hover:text-[#E05A2B]" />
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                  {/* Services Results */}
+                  {(activeSearchTab === 'all' || activeSearchTab === 'services') &&
+                    searchResults.services.length > 0 && (
+                      <div className="space-y-2.5">
+                        <span className="text-[10px] font-sans uppercase font-bold tracking-widest text-[#E05A2B] block">
+                          Design Disciplines ({searchResults.services.length})
+                        </span>
+                        <div className="space-y-2">
+                          {searchResults.services.map((serv) => (
+                            <Link
+                              key={serv.id}
+                              to="/services"
+                              onClick={() => setSearchOpen(false)}
+                              className="flex items-center justify-between p-3 rounded-2xl hover:bg-neutral-50 border border-neutral-100 transition-all group"
+                            >
+                              <div className="min-w-0">
+                                <h4 className="font-sans font-bold text-xs text-[#111111] group-hover:text-[#E05A2B]">
+                                  {serv.title}
+                                </h4>
+                                <p className="text-[11px] text-neutral-400 line-clamp-1">
+                                  {serv.tagline}
+                                </p>
+                              </div>
+                              <ArrowUpRight className="w-4 h-4 text-neutral-400 group-hover:text-[#E05A2B]" />
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                </div>
+              )}
             </div>
-            <div className="mt-4 flex flex-wrap gap-2 text-xs text-gray-500">
-              <span className="font-semibold text-black">Popular:</span>
-              <Link to="/projects" onClick={() => setSearchOpen(false)} className="hover:text-[#E05A2B] bg-gray-100 px-2 py-1 rounded-md">
-                Billow Sofa
-              </Link>
-              <Link to="/projects" onClick={() => setSearchOpen(false)} className="hover:text-[#E05A2B] bg-gray-100 px-2 py-1 rounded-md">
-                Kensington Maisonette
-              </Link>
-              <Link to="/services" onClick={() => setSearchOpen(false)} className="hover:text-[#E05A2B] bg-gray-100 px-2 py-1 rounded-md">
-                Custom Joinery
+
+            {/* Footer Tip */}
+            <div className="p-3.5 bg-neutral-50 border-t border-neutral-100 flex items-center justify-between text-[11px] text-neutral-400 px-6">
+              <span>Press <strong className="text-black">ESC</strong> to exit</span>
+              <Link
+                to="/furniture"
+                onClick={() => setSearchOpen(false)}
+                className="text-[#E05A2B] font-bold hover:underline"
+              >
+                Browse All Collections &rarr;
               </Link>
             </div>
           </div>

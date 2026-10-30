@@ -1,10 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FEATURED_PRODUCTS } from '../../data/mockData';
-import { ShoppingBag, ArrowUpRight } from 'lucide-react';
+import { FEATURED_PRODUCTS, FURNITURE_CATALOG } from '../../data/mockData';
+import { ShoppingBag, ArrowUpRight, Check } from 'lucide-react';
 import { FadeIn, FadeInStagger, FadeInStaggerItem } from '../ui/Motion';
+import { useWishlist } from '../../context/WishlistContext';
 
 export const FeaturedCollectionSection: React.FC = () => {
+  const { addItem, isInWishlist, setIsOpen } = useWishlist();
+
+  const handleAddAndOpen = (prod: typeof FEATURED_PRODUCTS[0], e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    // Find matching product in catalog or construct one
+    const match = FURNITURE_CATALOG.find((f) => f.title === prod.title) || {
+      id: prod.id,
+      title: prod.title,
+      price: prod.price,
+      category: prod.category,
+      roomSlug: 'living',
+      image: prod.image,
+      badge: prod.badge,
+      inStock: true,
+      description: 'Handcrafted signature piece from our curated collection.',
+    };
+    addItem(match);
+    setIsOpen(true);
+  };
   return (
     <section className="w-full bg-[#FAF8F5] py-14 sm:py-20 overflow-hidden text-left">
       <div className="max-w-[1680px] mx-auto px-4 sm:px-8 lg:px-12">
@@ -47,13 +68,14 @@ export const FeaturedCollectionSection: React.FC = () => {
                         {prod.badge}
                       </span>
                     )}
-                    <Link
-                      to="/consultation"
+                    <button
+                      type="button"
+                      onClick={(e) => handleAddAndOpen(prod, e)}
                       className="absolute bottom-2.5 right-2.5 p-2 rounded-full bg-black text-white hover:bg-[#E05A2B] opacity-0 group-hover:opacity-100 transition-all shadow-md"
-                      title="Inquire about item"
+                      title="Add to Inquiry Bag"
                     >
                       <ShoppingBag className="w-3.5 h-3.5" />
-                    </Link>
+                    </button>
                   </div>
 
                   <div>
